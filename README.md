@@ -20,6 +20,7 @@ on the face of the block, and levels will be randomly generated.
 
 ### Spindle (ASotI 03)
 **Not yet in development**
+
 Spindle is my take on an unidentified game found in a Facebook advertisement labelled "I challenge you to beat me".
 The game features a 3-dimensional spindle shape of infinite length with flywheel-esk objects attached to it.  Each wheel has a notch, or
 gap, in it which the player must manipulate the position of to allow a bouncing ball to fall through to the next level.  The flywheel's 
@@ -28,4 +29,7 @@ prodecurally generated.
 
 ### Outta the Park (ASotI 04)
 **Not yet in development**
-Outta the Park is a backyard baseball slugger's dream.  The game features a 3-dimensional field of view and procedurally generated obstacles such as trees, buildings, rivers, bridges, cars, and many more.  The objective of the game is to hit a baseball as far 'outta the park' as possible with the player's score incrementing with distance.  
+
+Outta the Park is a backyard baseball slugger's dream.  The game features a 3-dimensional field of view and procedurally generated
+obstacles such as trees, buildings, rivers, bridges, cars, and many more.  The objective of the game is to hit a baseball as far 'outta
+the park' as possible with the player's score incrementing with distance.  
