@@ -1,0 +1,2 @@
+E:\Users\Charles\Documents\My Games\Unity-Workspace\ASotI_CubeRunner\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+E:\Users\Charles\Documents\My Games\Unity-Workspace\ASotI_CubeRunner\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
