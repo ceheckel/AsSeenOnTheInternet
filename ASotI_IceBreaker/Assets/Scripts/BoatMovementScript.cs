@@ -28,7 +28,7 @@ public class BoatMovementScript : MonoBehaviour {
 			// ... check to see if boat left through bottom gap
 			if (gameObject.transform.position.y < -3) { DestroyBoat(); }
 			// ... check to see if boat left through top gap
-			else if (gameObject.transform.position.y > 20)
+			else if (gameObject.transform.position.y > 24)
 			{
 				// ... check to see which type of boat left
 				if (gameObject.name.Contains("Boat"))
@@ -53,5 +53,20 @@ public class BoatMovementScript : MonoBehaviour {
 		gameObject.SetActive(false);
 	}
 
-	public bool isFinished() { return finishState; }
+	public bool IsFinished() { return finishState; }
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		// if freighter collides will something ...
+		if (gameObject.name.Contains("Freighter") &&
+			collision.collider.tag.Equals("Obstacle"))
+		{
+			Debug.Log("Collision");
+			// ... change sprite
+			sm.GetComponent<BoatManagementScript>().ChangeFreighterSprite(gameObject);
+
+			//// ... decrement score
+			//sm.GetComponent<StatManagementScript>().IncrementCurrentScore(-100);
+		}
+	} // end of OnCollisionEnter2d()
 }

@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\BoatMovementScript.cs" />
     <Compile Include="Assets\Scripts\IceCollisionScript.cs" />
     <Compile Include="Assets\Scripts\LayTilesScript.cs" />
+    <Compile Include="Assets\Scripts\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\StatManagementScript.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/Users/Charles/Documents/My Games/Unity-Workspace/ASotI_IceBreaker/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>

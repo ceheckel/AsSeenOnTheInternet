@@ -107,7 +107,7 @@ public class LayTilesScript : MonoBehaviour {
 			else { s = sprites[1]; } // middle pieces on top (not in gap)
 		}
 		// sprites in the middle of the play field
-		else if (Random.Range(0,10) < levelDifficulty)
+		else if (Random.Range(0,25) < levelDifficulty)
 		{
 			// prevent tiles from spawning in front of opening
 			if (!(y < 4 && x > openingIndex[2] && x < openingIndex[3]))

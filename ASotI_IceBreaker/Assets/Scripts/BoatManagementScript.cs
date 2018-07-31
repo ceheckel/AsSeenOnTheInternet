@@ -11,6 +11,7 @@ public class BoatManagementScript : MonoBehaviour
 	public int numIB; // number of ice breakers
 	public int numFr; // number of freighters
 	public float launchDelay; // amount of time between boat launches
+	public Sprite[] boatSprites; // set of sprites for the Freighter
 
 	private float inputCooldown; // used to prevent freighter launch with breakers
 	private int launchNumber; // used to track which boats to launch and when
@@ -25,6 +26,8 @@ public class BoatManagementScript : MonoBehaviour
 
 		// initialize the launch number to 0 (game has not started)
 		launchNumber = 0;
+
+		frTemp.GetComponent<SpriteRenderer>().sprite = boatSprites[0];
 
 		CopyBoat(ibTemp, numIB, ref breakers);
 		CopyBoat(frTemp, numFr, ref freighters);
@@ -76,7 +79,7 @@ public class BoatManagementScript : MonoBehaviour
 		{
 			// ... if the boat is not active and unfinished ...
 			if ((!boats[i].activeInHierarchy) && 
-				(!boats[i].GetComponent<BoatMovementScript>().isFinished()))
+				(!boats[i].GetComponent<BoatMovementScript>().IsFinished()))
 			{
 				// ... set boat's new position and rotation
 				boats[i].transform.SetPositionAndRotation(
@@ -87,6 +90,9 @@ public class BoatManagementScript : MonoBehaviour
 
 				// ... set boat as active
 				boats[i].SetActive(true);
+
+				// update stat
+				gameObject.GetComponent<StatManagementScript>().IncrementCurrentLStat(1);
 
 				// ignore other boats; we set one going already
 				break;
@@ -142,5 +148,38 @@ public class BoatManagementScript : MonoBehaviour
 			// ... add boat to list
 			boats.Add(newBoat);
 		}
-	}
+	} // end of CopyBoat()
+
+
+	internal void ChangeFreighterSprite(GameObject curr)
+	{
+		Sprite s = curr.GetComponent<SpriteRenderer>().sprite;
+		Debug.Log("curr Sprite: " + s.name);
+
+		// find the curr sprit ein the list of freighter sprites
+		for (int i = 0; i < boatSprites.Length-1; i += 1)
+		{
+			// if found, the freighter has some health remaining
+			if (s.name.Equals(boatSprites[i].name))
+			{
+				// get new sprite
+				Debug.Log("Sprite Found decrementing to: " + boatSprites[i + 1].name);
+				s = boatSprites[i + 1];
+
+				// prevent excessive updates
+				break;
+			}
+		}
+
+		// if sprite was not updated, freighter has no health remaining.  End game.
+		if (s == curr.GetComponent<SpriteRenderer>().sprite)
+		{
+			Debug.Log("Freighter sank");
+
+			gameObject.GetComponent<StatManagementScript>().IncrementCurrentScore(-1000);
+			gameObject.GetComponent<StatManagementScript>().EndGame();
+		}
+		// reflect new sprite changes
+		curr.GetComponent<SpriteRenderer>().sprite = s;
+	} // end of ChangeSprite()
 }

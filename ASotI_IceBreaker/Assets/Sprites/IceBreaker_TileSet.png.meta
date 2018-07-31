@@ -2,42 +2,42 @@ fileFormatVersion: 2
 guid: d4b09217b194f104191c6528b03991f0
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ul_corner
-    21300002: u_wall
-    21300004: ur_corner
-    21300006: l_wall
+    21300000: ice_ul_wall
+    21300002: ice_u_wall
+    21300004: ice_ur_wall
+    21300006: ice_l_wall
     21300008: ow
-    21300010: r_wall
+    21300010: ice_r_wall
     21300012: Boat_IceBreaker
-    21300014: bl_corner
-    21300016: b_wall
-    21300018: br_corner
-    21300020: ul_opening
-    21300022: ur_opening
+    21300014: ice_bl_wall
+    21300016: ice_b_wall
+    21300018: ice_br_wall
+    21300020: ice_ul_wall_opening
+    21300022: ice_ur_wall_opening
     21300024: Arrow
     21300026: Boat_Freighter_4
-    21300028: bl_opening
-    21300030: br_opening
-    21300032: ul_4
-    21300034: ul_3
-    21300036: ul_2
-    21300038: ul_1
-    21300040: bl_4
-    21300042: bl_3
-    21300044: bl_2
-    21300046: bl_1
-    21300048: ur_4
-    21300050: ur_3
-    21300052: ur_2
-    21300054: ur_1
-    21300056: br_4
-    21300058: br_3
-    21300060: br_2
-    21300062: br_1
-    21300064: s_4
-    21300066: s_3
-    21300068: s_2
-    21300070: s_1
+    21300028: ice_bl_wall_opening
+    21300030: ice_br_wall_opening
+    21300032: ice_ul_4
+    21300034: ice_ul_3
+    21300036: ice_ul_2
+    21300038: ice_ul_1
+    21300040: ice_bl_4
+    21300042: ice_bl_3
+    21300044: ice_bl_2
+    21300046: ice_bl_1
+    21300048: ice_ur_4
+    21300050: ice_ur_3
+    21300052: ice_ur_2
+    21300054: ice_ur_1
+    21300056: ice_br_4
+    21300058: ice_br_3
+    21300060: ice_br_2
+    21300062: ice_br_1
+    21300064: ice_s_4
+    21300066: ice_s_3
+    21300068: ice_s_2
+    21300070: ice_s_1
     21300072: Freighter_4
     21300074: Freighter_3
     21300076: Freighter_2
@@ -149,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ul_corner
+      name: ice_ul_wall
       rect:
         serializedVersion: 2
         x: 0
@@ -169,7 +169,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: u_wall
+      name: ice_u_wall
       rect:
         serializedVersion: 2
         x: 32
@@ -189,7 +189,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ur_corner
+      name: ice_ur_wall
       rect:
         serializedVersion: 2
         x: 64
@@ -209,7 +209,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: l_wall
+      name: ice_l_wall
       rect:
         serializedVersion: 2
         x: 0
@@ -249,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: r_wall
+      name: ice_r_wall
       rect:
         serializedVersion: 2
         x: 64
@@ -269,7 +269,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bl_corner
+      name: ice_bl_wall
       rect:
         serializedVersion: 2
         x: 0
@@ -289,7 +289,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: b_wall
+      name: ice_b_wall
       rect:
         serializedVersion: 2
         x: 32
@@ -309,7 +309,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: br_corner
+      name: ice_br_wall
       rect:
         serializedVersion: 2
         x: 64
@@ -329,7 +329,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ul_opening
+      name: ice_ul_wall_opening
       rect:
         serializedVersion: 2
         x: 0
@@ -349,7 +349,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ur_opening
+      name: ice_ur_wall_opening
       rect:
         serializedVersion: 2
         x: 32
@@ -469,7 +469,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bl_opening
+      name: ice_bl_wall_opening
       rect:
         serializedVersion: 2
         x: 0
@@ -489,7 +489,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: br_opening
+      name: ice_br_wall_opening
       rect:
         serializedVersion: 2
         x: 32
@@ -509,7 +509,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ul_4
+      name: ice_ul_4
       rect:
         serializedVersion: 2
         x: 0
@@ -529,7 +529,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ul_3
+      name: ice_ul_3
       rect:
         serializedVersion: 2
         x: 32
@@ -549,7 +549,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ul_2
+      name: ice_ul_2
       rect:
         serializedVersion: 2
         x: 64
@@ -569,7 +569,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ul_1
+      name: ice_ul_1
       rect:
         serializedVersion: 2
         x: 96
@@ -609,7 +609,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bl_4
+      name: ice_bl_4
       rect:
         serializedVersion: 2
         x: 0
@@ -629,7 +629,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bl_3
+      name: ice_bl_3
       rect:
         serializedVersion: 2
         x: 32
@@ -649,7 +649,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bl_2
+      name: ice_bl_2
       rect:
         serializedVersion: 2
         x: 64
@@ -669,7 +669,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: bl_1
+      name: ice_bl_1
       rect:
         serializedVersion: 2
         x: 96
@@ -689,7 +689,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ur_4
+      name: ice_ur_4
       rect:
         serializedVersion: 2
         x: 0
@@ -709,7 +709,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ur_3
+      name: ice_ur_3
       rect:
         serializedVersion: 2
         x: 32
@@ -729,7 +729,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ur_2
+      name: ice_ur_2
       rect:
         serializedVersion: 2
         x: 64
@@ -749,7 +749,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ur_1
+      name: ice_ur_1
       rect:
         serializedVersion: 2
         x: 96
@@ -789,7 +789,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: br_4
+      name: ice_br_4
       rect:
         serializedVersion: 2
         x: 0
@@ -809,7 +809,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: br_3
+      name: ice_br_3
       rect:
         serializedVersion: 2
         x: 32
@@ -829,7 +829,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: br_2
+      name: ice_br_2
       rect:
         serializedVersion: 2
         x: 64
@@ -849,7 +849,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: br_1
+      name: ice_br_1
       rect:
         serializedVersion: 2
         x: 96
@@ -869,7 +869,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: s_4
+      name: ice_s_4
       rect:
         serializedVersion: 2
         x: 0
@@ -889,7 +889,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: s_3
+      name: ice_s_3
       rect:
         serializedVersion: 2
         x: 32
@@ -909,7 +909,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: s_2
+      name: ice_s_2
       rect:
         serializedVersion: 2
         x: 64
@@ -929,7 +929,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: s_1
+      name: ice_s_1
       rect:
         serializedVersion: 2
         x: 96

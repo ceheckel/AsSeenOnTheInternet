@@ -10,10 +10,14 @@ public class IceCollisionScript : MonoBehaviour {
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		// check to see if the other collider is from an Ice Breaker
-		if (collision.gameObject.name.Contains("Boat"))
+		if (collision.gameObject.name.Contains("Boat") && 
+			(!gameObject.GetComponent<SpriteRenderer>().sprite.name.Contains("wall")))
 		{
 			// ... if so, breakdown the sprite as necessary
 			sm.GetComponent<LayTilesScript>().ChangeSprite(gameObject);
+
+			// ... increment score stat
+			sm.GetComponent<StatManagementScript>().IncrementCurrentScore(25);
 		}
 
 		// check if the current object has been broken down to "open water"
