@@ -7,50 +7,53 @@ public class PlayerMovement : MonoBehaviour {
     public float player_yaccel;
     public float player_zaccel;
 
+	// added for mobile support
+	private bool moveLeft;
+	private bool moveRight;
+
+
     // Use this for initialization
     void Start () {
-        Debug.Log("Game On!");
-
-        // removes gravity when tied to an object
-        //player_rigidbody.useGravity = false;
-
-        // pushes the object when game starts
-        // player_rigidbody.AddForce(0, 200, 500); // pushes the player up by +200y and +500z
-
-        //player_xaccel = 0f;
-        //player_yaccel = 0f;
-        //player_zaccel = 1000f;
+		moveLeft = false;
+		moveRight = false;
 	}
+
 
     // Update is called once per frame
     private void Update()
-    {
-        // check if player is pressing movement keys
-        // this is a better movement technique than checking for input keys in
-        // the FixedUpdate method as this does not cause input lag
-        if (Input.GetKey("d"))
-        {
-            player_xaccel = 100f;
-        }
-        else if (Input.GetKey("a"))
-        {
-            player_xaccel = -100f;
-        } else { player_xaccel = 0f; }
+	{
+		moveLeft = false;
+		moveRight = false;
 
-        //if (Input.GetKey("w"))
-        //{
-        //    player_zaccel = 100f;
-        //}
-        //else if (Input.GetKey("s"))
-        //{
-        //    player_zaccel = -100f;
-        //} else { player_zaccel = 0f; }
-        
-    }
-    // FixedUpdate is a preferred update method for Unity
-    void FixedUpdate () {
-        //player_rigidbody.AddForce(0, 0, player_zaccel*(Time.deltaTime)); 
-        // continually pushes player down the z-axis
+		// if project is being run as desktop or WebGL, use keyboard inputs
+#if UNITY_EDITOR || UNITY_STANDALONE || UNITY_WEBPLAYER
+		// check if player is pressing movement keys
+		if (Input.GetKey("d")) { moveLeft = true; moveRight = false; }
+		else if (Input.GetKey("a")) { moveLeft = false; moveRight = true; }
+		else { moveLeft = false; moveRight = false; }
+
+		// if project is being run by a mobile device, defer to touchscreen inputs
+#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
+
+		// check to see if screen was touched in last frame
+		if (Input.touchCount > 0)
+		{
+			// if so, determine which half of the screen was touched
+			if (Input.touches[0].position.x > (Screen.width/2)) { moveLeft = true; moveRight = false; }
+			else if (Input.touches[0].position.x < (Screen.width/2)) { moveLeft = false; moveRight = true; }
+			else { moveLeft = false; moveRight = false; }
+		}
+#endif
+
+		// apply movement
+		if (moveLeft) { player_xaccel = 100f; }
+		else if (moveRight) { player_xaccel = -100f; }
+		else { player_xaccel = 0f; } // don't move
+	}
+
+
+	// FixedUpdate is a preferred update method for Unity
+	void FixedUpdate () {
         // Time.deltaTime is the amount of seconds since the engine drew the last frame
         // this prevents fast computers from moving the player much faster than slower computers
 

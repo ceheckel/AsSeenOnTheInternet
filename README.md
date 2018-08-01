@@ -6,7 +6,7 @@ All games include a "Builds" folder which contains a desktop executable along wi
 
 ### Cube Runner (ASotI 01)
 A Cube Runner variant created using tutorials from youtube.com/Brackeys as an introduction to the Unity engine and IDE.
-The game features three extremely difficult pre-developed level with glidy controls and various 'stages' per level.
+The game features three extremely difficult pre-developed level with glidey controls and various 'stages' per level.
 Each stage contains a different obstacle type, and new challenges to overcome.
 Brackeys' tutorials discuss basic game components such enemies, player characters, scene development, start menus/end menus,
 music/sound effects, scripting, and several other key components to video games.  All content discussed in Brackeys' tutorial series has
@@ -14,9 +14,10 @@ been implemented into this first game
 
 ### Ice Breaker (ASotI 02)
 **Development in Progress**
+
 Ice Breaker is a 2-dimensional [Bubble Shooter](http://www.bubblegame.org/) style game in which the objective is to clear the playing
-field by hitting each object with your projectile a set number of times, the number of times each object needs to be hit will be displayed
-on the face of the block, and levels will be randomly generated.
+field by hitting the ice blocks with your launched ice breaking boats a set number of times, the number of times each object needs to be hit 
+is determined by the density of the sprite, and levels are be randomly generated.
 
 ### Spindle (ASotI 03)
 **Not yet in development**

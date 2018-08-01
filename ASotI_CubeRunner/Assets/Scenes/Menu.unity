@@ -14,9 +14,9 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
-  m_FogMode: 3
+  m_FogMode: 2
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
@@ -511,7 +511,7 @@ GameObject:
   - component: {fileID: 1399079579}
   - component: {fileID: 1399079578}
   m_Layer: 5
-  m_Name: TutorialBy
+  m_Name: CreatedBy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -567,7 +567,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Tutorial By:'
+  m_Text: 'Created By:'
 --- !u!222 &1399079579
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -681,7 +681,7 @@ GameObject:
   - component: {fileID: 1619078479}
   - component: {fileID: 1619078478}
   m_Layer: 5
-  m_Name: Brackeys
+  m_Name: CharredHecks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -737,7 +737,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Brackeys
+  m_Text: CharredHecks
 --- !u!222 &1619078479
 CanvasRenderer:
   m_ObjectHideFlags: 0
