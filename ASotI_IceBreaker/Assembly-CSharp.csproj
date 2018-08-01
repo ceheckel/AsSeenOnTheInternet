@@ -68,6 +68,8 @@
     <Compile Include="Assets\Scripts\LayTilesScript.cs" />
     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\StatManagementScript.cs" />
+    <Compile Include="Assets\Scripts\TutorialFreighterScript.cs" />
+    <Compile Include="Assets\Scripts\TutorialMovementScript.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/Users/Charles/Documents/My Games/Unity-Workspace/ASotI_IceBreaker/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
