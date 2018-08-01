@@ -29,7 +29,29 @@ public class StatManagementScript : MonoBehaviour {
 		scorestat.text = GetCurrentScore().ToString();
 		launchstat.text = GetCurrentLStat().ToString();
 
+		// decrement score with time
 		score -= 1 * Time.deltaTime;
+
+		// watch for signal that level is finished
+		// find all boat objects
+		GameObject[] gos = GameObject.FindGameObjectsWithTag("Boat");
+		for (int i = 0; i < gos.Length; i += 1)
+		{
+			// find the boat object with the name "Freighter..."
+			if (gos[i].name.Contains("Freighter"))
+			{
+				Debug.Log(gos[i].GetComponent<BoatMovementScript>().IsFinished());
+				// if the freighter has left the level through the top of the screen
+				if (gos[i].GetComponent<BoatMovementScript>().IsFinished())
+				{
+					Debug.Log("freighter across");
+					// load a new level and update stats
+					NewLevel();
+					IncrementCurrentLevel(1);
+					IncrementCurrentScore(1000);
+				}
+			}
+		}
 	}
 
 
@@ -45,7 +67,7 @@ public class StatManagementScript : MonoBehaviour {
 
 	// loads the main level without resetting the stats
 	// typically used after level completion
-	void NewLevel() { SceneManager.LoadScene("LevelScene"); }
+	internal void NewLevel() { Debug.Log("Loading"); SceneManager.LoadScene("LevelScene"); }
 	// loads the credits screen
 	internal void EndGame() { SceneManager.LoadScene("CreditsScene"); }
 

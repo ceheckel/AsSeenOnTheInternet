@@ -154,7 +154,6 @@ public class BoatManagementScript : MonoBehaviour
 	internal void ChangeFreighterSprite(GameObject curr)
 	{
 		Sprite s = curr.GetComponent<SpriteRenderer>().sprite;
-		Debug.Log("curr Sprite: " + s.name);
 
 		// find the curr sprit ein the list of freighter sprites
 		for (int i = 0; i < boatSprites.Length-1; i += 1)
@@ -163,7 +162,6 @@ public class BoatManagementScript : MonoBehaviour
 			if (s.name.Equals(boatSprites[i].name))
 			{
 				// get new sprite
-				Debug.Log("Sprite Found decrementing to: " + boatSprites[i + 1].name);
 				s = boatSprites[i + 1];
 
 				// prevent excessive updates
@@ -174,12 +172,17 @@ public class BoatManagementScript : MonoBehaviour
 		// if sprite was not updated, freighter has no health remaining.  End game.
 		if (s == curr.GetComponent<SpriteRenderer>().sprite)
 		{
-			Debug.Log("Freighter sank");
-
-			gameObject.GetComponent<StatManagementScript>().IncrementCurrentScore(-1000);
-			gameObject.GetComponent<StatManagementScript>().EndGame();
+			Invoke("CallEndGame", 5f);
 		}
 		// reflect new sprite changes
 		curr.GetComponent<SpriteRenderer>().sprite = s;
 	} // end of ChangeSprite()
+
+
+	// 
+	private void CallEndGame()
+	{
+		gameObject.GetComponent<StatManagementScript>().IncrementCurrentScore(-995);
+		gameObject.GetComponent<StatManagementScript>().EndGame();
+	}
 }

@@ -40,7 +40,9 @@ public class BoatMovementScript : MonoBehaviour {
 				{
 					// ... mark as finished if boat was a freighter
 					finishState = true;
-					gameObject.SetActive(false);
+					//gameObject.SetActive(false);
+
+					Debug.Log("freighter status: " + finishState);
 				}
 			}
 		}
@@ -61,12 +63,11 @@ public class BoatMovementScript : MonoBehaviour {
 		if (gameObject.name.Contains("Freighter") &&
 			collision.collider.tag.Equals("Obstacle"))
 		{
-			Debug.Log("Collision");
 			// ... change sprite
 			sm.GetComponent<BoatManagementScript>().ChangeFreighterSprite(gameObject);
 
-			//// ... decrement score
-			//sm.GetComponent<StatManagementScript>().IncrementCurrentScore(-100);
+			// ... decrement score
+			sm.GetComponent<StatManagementScript>().IncrementCurrentScore(-100);
 		}
 	} // end of OnCollisionEnter2d()
 }
