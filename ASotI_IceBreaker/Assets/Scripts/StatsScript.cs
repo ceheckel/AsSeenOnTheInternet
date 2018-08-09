@@ -5,14 +5,13 @@ using UnityEngine.SceneManagement;
 public class StatsScript : MonoBehaviour {
 
 	// references
-	public GameObject levelLabel;
-	public GameObject launchLabel;
-	public GameObject scoreLabel;
-
+	private GameObject levelLabel;
+	private GameObject launchLabel;
+	private GameObject scoreLabel;
 	private int levelNum;
 	private int launchNum;
 	private float score;
-
+	
 
 	//
 	internal void FindStats()
@@ -36,10 +35,10 @@ public class StatsScript : MonoBehaviour {
 			// continually update text fields
 			levelLabel.GetComponent<Text>().text = GetLevelValue().ToString();
 			launchLabel.GetComponent<Text>().text = GetLaunchValue().ToString();
-			scoreLabel.GetComponent<Text>().text = GetScoreValue().ToString();
+			scoreLabel.GetComponent<Text>().text = ((int)GetScoreValue()).ToString();
 
 			// ... decrement score with time
-			score -= Time.deltaTime;
+			SetScoreValue(GetScoreValue() - Time.deltaTime);
 		}
 	}
 
@@ -49,17 +48,17 @@ public class StatsScript : MonoBehaviour {
 	{
 		SetLevelValue(1);
 		SetLaunchValue(0);
-		SetScoreValue(0);
+		SetScoreValue(0.0f);
 	}
 
 
 	// getter and setter for level number
-	private void SetLevelValue(int val) { levelNum = val; }
+	internal void SetLevelValue(int val) { levelNum = val; }
 	public int GetLevelValue() { return levelNum; }
 	// getter and setter for launch number
 	internal void SetLaunchValue(int val) { launchNum = val; }
 	public int GetLaunchValue() { return launchNum; }
 	// getter and setter for score
-	internal void SetScoreValue(int val) { score = val; }
-	public int GetScoreValue() { return (int)score; }
+	internal void SetScoreValue(float val) { score = val; }
+	public float GetScoreValue() { return score; }
 }

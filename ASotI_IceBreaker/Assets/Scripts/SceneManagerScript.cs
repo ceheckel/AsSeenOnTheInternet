@@ -18,6 +18,26 @@ public class SceneManagerScript : MonoBehaviour {
 	}
 
 
+	//
+	private void Update()
+	{
+		// Exit Application with "ESC" or "Back" button on android
+		if (Input.GetKeyDown(KeyCode.Escape)) { ExitGame(); }
+		
+		if (SceneManager.GetActiveScene().name.Equals("LevelScene") &&
+			gameObject.GetComponent<BoatsScript>().AnyFinished())
+		{
+			// stop launches
+			gameObject.GetComponent<BoatsScript>().StopLaunch();
+
+			// load new level, adjust stat
+			NewLevel(false);
+			gameObject.GetComponent<StatsScript>().SetLevelValue(
+				gameObject.GetComponent<StatsScript>().GetLevelValue() + 1);
+		}
+	}
+
+
 	// handles the level transitions, typically to and from the main menu
 	public void LoadLevel(int level)
 	{
@@ -34,14 +54,36 @@ public class SceneManagerScript : MonoBehaviour {
 
 
 	//
+	internal void NewLevel(bool reset)
+	{
+		gameObject.GetComponent<StatsScript>().FindStats(); // make reference connections
+		if (reset) gameObject.GetComponent<StatsScript>().ClearStats(); // reset stats
+
+		gameObject.GetComponent<TilesScript>().InitLevel(); // make reference connections
+		gameObject.GetComponent<TilesScript>().CreateTiles(); // create tile objects
+		gameObject.GetComponent<TilesScript>().ChangeTiles(); // give objects new sprites
+
+		gameObject.GetComponent<BoatsScript>().InitLevel(); // make reference connections
+		gameObject.GetComponent<BoatsScript>().CreateBoats(); // create boat objects
+		gameObject.GetComponent<BoatsScript>().SetBoatsActive(false);
+		gameObject.GetComponent<BoatsScript>().RestartLaunchSequence();
+		gameObject.GetComponent<BoatsScript>().RestartFinishStatus();
+
+		gameObject.GetComponent<ArrowScript>().FindArrow(); // make reference connections
+		gameObject.GetComponent<ArrowScript>().RelocateArrow(); // move the launch arrow
+		gameObject.GetComponent<ArrowScript>().RestartLaunchSequence();
+	}
+
+
+	//
 	private void OnLevelWasLoaded(int level)
 	{
 		switch (level)
 		{
 			case 0: /* Logic for return to main menu */
-				gameObject.GetComponent<StatsScript>().ClearStats(); // reset stats
-				gameObject.GetComponent<TilesScript>().ClearField(); // empty in-field
-				gameObject.GetComponent<BoatsScript>().SetBoatsActive(false);
+					//gameObject.GetComponent<StatsScript>().ClearStats(); // reset stats
+					//gameObject.GetComponent<TilesScript>().ClearField(); // empty in-field
+				gameObject.GetComponent<BoatsScript>().StopLaunch();
 				break;
 
 			case 1: /* Logic for transition to tutorial */
@@ -51,24 +93,15 @@ public class SceneManagerScript : MonoBehaviour {
 				break;
 
 			case 2: /* Logic for loading of main level */
-				gameObject.GetComponent<StatsScript>().FindStats(); // make reference connections
-
-				gameObject.GetComponent<TilesScript>().InitLevel(); // make reference connections
-				gameObject.GetComponent<TilesScript>().CreateTiles(); // create tile objects
-				gameObject.GetComponent<TilesScript>().ChangeTiles(); // give objects new sprites
-				
-				gameObject.GetComponent<BoatsScript>().CreateBoats(); // create boat obects
-				gameObject.GetComponent<BoatsScript>().SetBoatsActive(false);
-				gameObject.GetComponent<BoatsScript>().RestartLaunchSequence();
-
-				gameObject.GetComponent<ArrowScript>().FindArrow(); // make reference connections
-				gameObject.GetComponent<ArrowScript>().RelocateArrow(); // move the launch arrow
-				gameObject.GetComponent<ArrowScript>().RestartLaunchSequence();
+				NewLevel(true);
 				break;
 
 			case 3: /* Logic for credits screen */
-				gameObject.GetComponent<TilesScript>().ClearField(); // empty in-field
+				gameObject.GetComponent<TilesScript>().InitLevel(); // make reference connections
 				gameObject.GetComponent<TilesScript>().OpenField(); // set border only
+
+				gameObject.GetComponent<BoatsScript>().InitLevel(); // make reference connections
+				gameObject.GetComponent<BoatsScript>().CreateBoats(); // create boat objects
 				gameObject.GetComponent<BoatsScript>().SetBoatsActive(true);
 
 				//gameObject.GetComponent<BoatsScript>().CreditsBuild(); // create boats for credits
@@ -77,4 +110,8 @@ public class SceneManagerScript : MonoBehaviour {
 				break;
 		} // end of switch-case
 	} // end of OnLevelWasLoaded()
+
+
+	//
+	public void ExitGame() { Application.Quit(); }
 }

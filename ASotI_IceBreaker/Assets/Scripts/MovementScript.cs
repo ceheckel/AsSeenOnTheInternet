@@ -40,7 +40,7 @@ public class MovementScript : MonoBehaviour {
 					gameObject.SetActive(false);
 				}
 				// ... if the boat is a Freighter
-				else if (gameObject.name.Contains("Freighter"))
+				else if (gameObject.name.Contains("FR"))
 				{
 					isFinished = true;
 				}
@@ -51,16 +51,16 @@ public class MovementScript : MonoBehaviour {
 
 	//
 	public bool IsFinished() { return isFinished; }
+	public void SetFinished(bool fin) { isFinished = fin; }
 
 
 	//
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		// if freighter collides with something ...
-		if (gameObject.name.Contains("Freighter") &&
+		if (gameObject.name.Contains("FR") &&
 			collision.collider.tag.Equals("Obstacle"))
 		{
-			Debug.Log("hit");
 			// ... change sprite
 			sm.GetComponent<BoatsScript>().ChangeFreighter(gameObject);
 
@@ -74,10 +74,6 @@ public class MovementScript : MonoBehaviour {
 		{
 			// ... change ice sprite
 			sm.GetComponent<TilesScript>().BreakSprite(collision.gameObject);
-
-			// ... increment score
-			sm.GetComponent<StatsScript>().SetScoreValue(
-				(int)sm.GetComponent<StatsScript>().GetScoreValue() + 10);
 		}
 	} // end of OnCollisionEnter2d()
 }

@@ -64,6 +64,8 @@ public class ArrowScript : MonoBehaviour
 	//
 	internal void RelocateArrow()
 	{
+		if (arrow == null) { FindArrow(); }
+
 		int newX = GetComponent<TilesScript>().GetLowerGapCenter();
 		arrow.transform.SetPositionAndRotation(
 			new Vector2(newX, -0.5f), Quaternion.identity);

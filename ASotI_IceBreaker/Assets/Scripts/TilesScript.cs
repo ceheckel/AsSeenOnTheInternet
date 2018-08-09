@@ -21,7 +21,7 @@ public class TilesScript : MonoBehaviour {
 
 
 	//
-	private void Start()
+	void Start()
 	{
 		tiles = new List<GameObject>();
 	}
@@ -33,8 +33,12 @@ public class TilesScript : MonoBehaviour {
 		tile = GameObject.FindGameObjectWithTag("Obstacle");
 		if (tile == null) { Debug.LogWarning("No tile object found"); }
 
+		if (tiles != null) { GetAllTiles(); }
+
 		openingIndex[0] = 0; openingIndex[1] = 0;
 		openingIndex[2] = 0; openingIndex[3] = 0;
+
+		tilesCloned = false;
 	}
 
 
@@ -61,7 +65,7 @@ public class TilesScript : MonoBehaviour {
 				tiles.Add(obj);
 			}
 		}
-		
+
 		tilesCloned = true;
 	} // end of CreateTiles()
 
@@ -127,12 +131,15 @@ public class TilesScript : MonoBehaviour {
 	//
 	internal void ChangeTiles()
 	{
-		if (tiles == null) { return; }
-		
+		if (tiles == null) { Debug.LogWarning("ChangeTiles(): tiles null"); return; }
+		if (tiles.Count == 0) { Debug.LogWarning("ChangeTiles(): tiles empty"); return; }
+
 		NewOpening();
 		
 		foreach (GameObject t in tiles)
 		{
+			if (t == null) { Debug.LogWarning("ChangeTiles(): tile is null"); return; }
+
 			t.GetComponent<SpriteRenderer>().sprite = GenerateSprite(
 				(int)t.transform.position.x,
 				(int)t.transform.position.y);
@@ -155,6 +162,7 @@ public class TilesScript : MonoBehaviour {
 			{
 				t.SetActive(true);
 			}
+			//Debug.Log(t.name + " Changed");
 		}
 	} // end of ChangeTiles()
 
@@ -162,11 +170,15 @@ public class TilesScript : MonoBehaviour {
 	//
 	internal void ClearField()
 	{
-		if (tiles == null) { return; }
-
+		if (tiles == null) { Debug.LogWarning("ClearField(): tiles null");	return; }
+		if (tiles.Count == 0) { Debug.LogWarning("ClearField(): tiles empty");	return; }
+		
 		foreach (GameObject t in tiles)
 		{
-			if (t.activeInHierarchy) { t.SetActive(false); }
+			Debug.Log(t);
+			if (t.activeInHierarchy) { t.SetActive(false);
+				Debug.Log(t.name + " disabled");
+			}
 		}
 	} // end of ClearField
 
@@ -235,7 +247,29 @@ public class TilesScript : MonoBehaviour {
 					tile.GetComponent<SpriteRenderer>().sprite = sprites[i - 1];
 				}
 
+				// ... increment score
+				// (I don't know why I have to be this explicit, but using just 
+				//  "gameObject.GetComponent..." was not returning the correct value)
+				GameObject.Find("SceneManager").GetComponent<StatsScript>().SetScoreValue(
+					GameObject.Find("SceneManager").GetComponent<StatsScript>().GetScoreValue() + 10);
+				
 				break;
+			}
+		}
+	} // end of BreakSprite()
+
+
+	//
+	private void GetAllTiles()
+	{
+		Object[] array = Resources.FindObjectsOfTypeAll(typeof(GameObject));
+		tiles.Clear();
+
+		for (int i = 0; i < array.Length; i += 1)
+		{ 
+			if (array[i].name.Contains("Tile["))
+			{
+				tiles.Add((GameObject)array[i]);
 			}
 		}
 	}

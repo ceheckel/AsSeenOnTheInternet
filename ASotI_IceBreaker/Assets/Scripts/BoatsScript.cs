@@ -22,15 +22,27 @@ public class BoatsScript : MonoBehaviour {
 
 
 	//
-	private void Start()
+	void Start()
 	{
 		freighters = new List<GameObject>();
 		iceBreakers = new List<GameObject>();
+	}
 
-		// start at launch stage zero
-		launchNumber = 0;
 
-		restartTimer = defaultTime;
+	//
+	internal void InitLevel()
+	{
+		if (freighters == null || freighters.Count == 0 || 
+			iceBreakers == null || iceBreakers.Count == 0)
+		{
+			boatsCloned = false;
+		}
+		else if (freighters != null || iceBreakers != null)
+		{
+			GetAllBoats();
+		}
+
+		RestartFreighterSprite();
 	}
 
 
@@ -43,12 +55,12 @@ public class BoatsScript : MonoBehaviour {
 			StartCoroutine(LaunchBoatsRepeat(iceBreakers, launchDelay));
 
 			// prevent relaunch of IBs
-			launchNumber = 2;
+			launchNumber += 1;
 		}
 		else if (launchNumber == 2)
 		{
 			restartTimer -= Time.deltaTime;
-			if (restartTimer <= 0) { launchNumber = 3; }
+			if (restartTimer <= 0) { launchNumber += 1; }
 		}
 		// when user gives the word, launching FRs
 		else if (launchNumber == 4)
@@ -56,7 +68,7 @@ public class BoatsScript : MonoBehaviour {
 			StartCoroutine(LaunchBoatsRepeat(freighters, launchDelay));
 
 			// prevent relaunch of IBs
-			launchNumber = 5;
+			launchNumber += 1;
 		}
 	}
 
@@ -64,10 +76,13 @@ public class BoatsScript : MonoBehaviour {
 	//
 	private void FixedUpdate()
 	{
-		// check for start signal and active scene
-		if (Input.anyKey && launchNumber == 0 &&
-			SceneManager.GetActiveScene().name.Equals("LevelScene")) { launchNumber = 1; }
-		if (Input.anyKey && launchNumber == 3) { launchNumber = 4; }
+		// check for start signal, launch stage, and active scene
+		if ((launchNumber == 0 || launchNumber == 3) && Input.anyKey &&
+			SceneManager.GetActiveScene().name.Equals("LevelScene"))
+		{
+			launchNumber += 1;
+			restartTimer = defaultTime;
+		}
 	}
 
 
@@ -81,10 +96,10 @@ public class BoatsScript : MonoBehaviour {
 		for (int i = 0; i < numFrs; i += 1)
 		{
 			// clone the freighter
-			GameObject obj = Instantiate(frTemp);
+			GameObject obj = Instantiate(frTemp) as GameObject;
 
 			// set properties
-			obj.name = "Freighter [" + i + "]";
+			obj.name = "FR [" + i + "]";
 			obj.transform.parent = frTemp.transform.parent;
 			obj.SetActive(false);
 
@@ -96,7 +111,7 @@ public class BoatsScript : MonoBehaviour {
 		for (int i = 0; i < numIBs; i += 1)
 		{
 			// clone the IB
-			GameObject obj = Instantiate(ibTemp);
+			GameObject obj = Instantiate(ibTemp) as GameObject;
 
 			// set properties
 			obj.name = "IB [" + i + "]";
@@ -130,16 +145,18 @@ public class BoatsScript : MonoBehaviour {
 		Debug.Log("Sinking");
 
 		// move to credits
-		Invoke("EndGame", 2f);
+		gameObject.GetComponent<SceneManagerScript>().LoadLevel(3);
 	}
 
 
 	//
-	private void EndGame()
+	internal void RestartFreighterSprite()
 	{
-		gameObject.GetComponent<SceneManagerScript>().LoadLevel(3);
+		foreach (GameObject fr in freighters)
+		{
+			fr.GetComponent<SpriteRenderer>().sprite = frSprites[0];
+		}
 	}
-
 
 	//
 	internal void SetBoatsActive(bool val)
@@ -168,14 +185,22 @@ public class BoatsScript : MonoBehaviour {
 
 
 	//
+	internal void StopLaunch()
+	{
+		StopAllCoroutines();
+		Debug.Log("Launches Stopped");
+	}
+
+
+	//
 	internal void LaunchBoats(List<GameObject> boats)
 	{
 		// for each boat in the provided list ...
 		foreach (GameObject b in boats)
 		{
 			// ... find a boat that is disabled and unfinished ...
-			if ((!b.activeInHierarchy) &&
-				(!b.GetComponent<MovementScript>().IsFinished()))
+			if ((!b.activeInHierarchy) /*&&
+				(!b.GetComponent<MovementScript>().IsFinished())*/)
 			{
 				// ... move it to the launch position
 				b.transform.SetPositionAndRotation(
@@ -185,9 +210,11 @@ public class BoatsScript : MonoBehaviour {
 				// ... enable it
 				b.SetActive(true);
 
-				// ... increment launch stat
+				// ... increment stats
 				GetComponent<StatsScript>().SetLaunchValue(
 					GetComponent<StatsScript>().GetLaunchValue() + 1);
+				GetComponent<StatsScript>().SetScoreValue(
+					GetComponent<StatsScript>().GetScoreValue() + 10);
 
 				// ... ignore the rest of the boats
 				break;
@@ -201,5 +228,49 @@ public class BoatsScript : MonoBehaviour {
 	{
 		launchNumber = 0;
 		restartTimer = defaultTime;
+	}
+
+
+	//
+	internal void GetAllBoats()
+	{
+		Object[] array = Resources.FindObjectsOfTypeAll(typeof(GameObject));
+		iceBreakers.Clear();
+		freighters.Clear();
+
+		for (int i = 0; i < array.Length; i += 1)
+		{
+			if (array[i].name.Contains("IB ["))
+			{
+				iceBreakers.Add((GameObject)array[i]);
+			}
+			else if (array[i].name.Contains("FR ["))
+			{
+				freighters.Add((GameObject)array[i]);
+			}
+		}
+	}
+
+
+	//
+	internal bool AnyFinished()
+	{
+		foreach (GameObject fr in freighters)
+		{
+			if (fr.GetComponent<MovementScript>().IsFinished())
+				return true;
+		}
+
+		return false;
+	}
+
+
+	//
+	internal void RestartFinishStatus()
+	{
+		foreach (GameObject fr in freighters)
+		{
+			fr.GetComponent<MovementScript>().SetFinished(false);
+		}
 	}
 }

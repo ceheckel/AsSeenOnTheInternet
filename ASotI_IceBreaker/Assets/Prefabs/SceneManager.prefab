@@ -68,10 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7f7e731b8012194aad75ddba497c3ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelLabel: {fileID: 1827322621031332, guid: f2acd3c74d0e5f248832700a4cddbb8e, type: 2}
-  launchLabel: {fileID: 1561073510339852, guid: f2acd3c74d0e5f248832700a4cddbb8e,
-    type: 2}
-  scoreLabel: {fileID: 1670397019798262, guid: f2acd3c74d0e5f248832700a4cddbb8e, type: 2}
 --- !u!114 &114630608256915520
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -146,8 +142,8 @@ MonoBehaviour:
   defaultTime: 10.5
   numIBs: 5
   numFrs: 1
-  frTemp: {fileID: 1180617358729012, guid: b20d97c87804ee84790118ff0ba9ee8d, type: 2}
-  ibTemp: {fileID: 1264939708869438, guid: b9ae581066498f448a66ddf426e97123, type: 2}
+  frTemp: {fileID: 1026133490325572, guid: c746636ea9a18b544b54587d9f81f74f, type: 2}
+  ibTemp: {fileID: 1182086929427752, guid: 6557c1ddd9aae06469f701e9ab5e7b45, type: 2}
   frSprites:
   - {fileID: 21300072, guid: d4b09217b194f104191c6528b03991f0, type: 3}
   - {fileID: 21300074, guid: d4b09217b194f104191c6528b03991f0, type: 3}
