@@ -2,22 +2,22 @@ fileFormatVersion: 2
 guid: d4b09217b194f104191c6528b03991f0
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ice_ul_wall
-    21300002: ice_u_wall
-    21300004: ice_ur_wall
-    21300006: ice_l_wall
+    21300000: wall_ul
+    21300002: wall_u
+    21300004: wall_ur
+    21300006: wall_l
     21300008: ow
-    21300010: ice_r_wall
+    21300010: wall_r
     21300012: Boat_IceBreaker
-    21300014: ice_bl_wall
-    21300016: ice_b_wall
-    21300018: ice_br_wall
-    21300020: ice_ul_wall_opening
-    21300022: ice_ur_wall_opening
+    21300014: wall_bl
+    21300016: wall_b
+    21300018: wall_br
+    21300020: wall_open_ul
+    21300022: wall_open_ur
     21300024: Arrow
     21300026: Boat_Freighter_4
-    21300028: ice_bl_wall_opening
-    21300030: ice_br_wall_opening
+    21300028: wall_open_bl
+    21300030: wall_open_br
     21300032: ice_ul_4
     21300034: ice_ul_3
     21300036: ice_ul_2
@@ -38,12 +38,12 @@ TextureImporter:
     21300066: ice_s_3
     21300068: ice_s_2
     21300070: ice_s_1
-    21300072: Freighter_4
-    21300074: Freighter_3
-    21300076: Freighter_2
-    21300078: Freighter_1
-    21300080: Freighter_0
-    21300082: IceBreaker
+    21300072: Ship_Freighter_4
+    21300074: Ship_Freighter_3
+    21300076: Ship_Freighter_2
+    21300078: Ship_Freighter_1
+    21300080: Ship_Freighter_0
+    21300082: Ship_IB
     21300084: PlayerArrow
   externalObjects: {}
   serializedVersion: 6
@@ -149,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ice_ul_wall
+      name: wall_ul
       rect:
         serializedVersion: 2
         x: 0
@@ -169,7 +169,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_u_wall
+      name: wall_u
       rect:
         serializedVersion: 2
         x: 32
@@ -189,7 +189,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_ur_wall
+      name: wall_ur
       rect:
         serializedVersion: 2
         x: 64
@@ -209,7 +209,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_l_wall
+      name: wall_l
       rect:
         serializedVersion: 2
         x: 0
@@ -249,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_r_wall
+      name: wall_r
       rect:
         serializedVersion: 2
         x: 64
@@ -269,7 +269,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_bl_wall
+      name: wall_bl
       rect:
         serializedVersion: 2
         x: 0
@@ -289,7 +289,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_b_wall
+      name: wall_b
       rect:
         serializedVersion: 2
         x: 32
@@ -309,7 +309,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_br_wall
+      name: wall_br
       rect:
         serializedVersion: 2
         x: 64
@@ -329,7 +329,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_ul_wall_opening
+      name: wall_open_ul
       rect:
         serializedVersion: 2
         x: 0
@@ -349,7 +349,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_ur_wall_opening
+      name: wall_open_ur
       rect:
         serializedVersion: 2
         x: 32
@@ -369,7 +369,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Freighter_4
+      name: Ship_Freighter_4
       rect:
         serializedVersion: 2
         x: 96
@@ -389,7 +389,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Freighter_3
+      name: Ship_Freighter_3
       rect:
         serializedVersion: 2
         x: 128
@@ -409,7 +409,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Freighter_2
+      name: Ship_Freighter_2
       rect:
         serializedVersion: 2
         x: 160
@@ -429,7 +429,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Freighter_1
+      name: Ship_Freighter_1
       rect:
         serializedVersion: 2
         x: 192
@@ -449,7 +449,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Freighter_0
+      name: Ship_Freighter_0
       rect:
         serializedVersion: 2
         x: 224
@@ -469,7 +469,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_bl_wall_opening
+      name: wall_open_bl
       rect:
         serializedVersion: 2
         x: 0
@@ -489,7 +489,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ice_br_wall_opening
+      name: wall_open_br
       rect:
         serializedVersion: 2
         x: 32
@@ -589,7 +589,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: IceBreaker
+      name: Ship_IB
       rect:
         serializedVersion: 2
         x: 128

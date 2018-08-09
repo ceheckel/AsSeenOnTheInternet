@@ -61,15 +61,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\ArrowMovementScript.cs" />
-    <Compile Include="Assets\Scripts\BoatManagementScript.cs" />
-    <Compile Include="Assets\Scripts\BoatMovementScript.cs" />
-    <Compile Include="Assets\Scripts\IceCollisionScript.cs" />
-    <Compile Include="Assets\Scripts\LayTilesScript.cs" />
-    <Compile Include="Assets\Scripts\MainMenuScript.cs" />
-    <Compile Include="Assets\Scripts\StatManagementScript.cs" />
-    <Compile Include="Assets\Scripts\TutorialFreighterScript.cs" />
-    <Compile Include="Assets\Scripts\TutorialMovementScript.cs" />
+    <Compile Include="Assets\Scripts\ArrowScript.cs" />
+    <Compile Include="Assets\Scripts\BoatsScript.cs" />
+    <Compile Include="Assets\Scripts\MovementScript.cs" />
+    <Compile Include="Assets\Scripts\SceneManagerScript.cs" />
+    <Compile Include="Assets\Scripts\StatsScript.cs" />
+    <Compile Include="Assets\Scripts\TilesScript.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/Users/Charles/Documents/My Games/Unity-Workspace/ASotI_IceBreaker/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
