@@ -106,10 +106,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 1021, y: 392}
-  m_MaxSize: {x: 26016, y: 14042}
+  m_MinSize: {x: 1011, y: 392}
+  m_MaxSize: {x: 26006, y: 14042}
   vertical: 0
-  controlID: 6199
+  controlID: 92
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -130,10 +130,10 @@ MonoBehaviour:
     y: 0
     width: 1643
     height: 947
-  m_MinSize: {x: 744, y: 392}
-  m_MaxSize: {x: 22014, y: 14042}
+  m_MinSize: {x: 736, y: 392}
+  m_MaxSize: {x: 22006, y: 14042}
   vertical: 1
-  controlID: 6200
+  controlID: 93
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -156,10 +156,10 @@ MonoBehaviour:
     y: 0
     width: 1643
     height: 685
-  m_MinSize: {x: 744, y: 271}
-  m_MaxSize: {x: 22014, y: 10021}
+  m_MinSize: {x: 736, y: 271}
+  m_MaxSize: {x: 22006, y: 10021}
   vertical: 0
-  controlID: 6201
+  controlID: 94
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -228,8 +228,8 @@ MonoBehaviour:
     y: 0
     width: 359
     height: 685
-  m_MinSize: {x: 204, y: 221}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -253,8 +253,8 @@ MonoBehaviour:
     y: 0
     width: 848
     height: 685
-  m_MinSize: {x: 104, y: 121}
-  m_MaxSize: {x: 4004, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -303,8 +303,8 @@ MonoBehaviour:
     y: 0
     width: 277
     height: 947
-  m_MinSize: {x: 277, y: 71}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -336,7 +336,7 @@ MonoBehaviour:
     height: 664
   m_PersistentViewDataDictionary: {fileID: 0}
   m_MaximizeOnPlay: 0
-  m_Gizmos: 1
+  m_Gizmos: 0
   m_Stats: 0
   m_SelectedSizes: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   m_TargetDisplay: 0
@@ -426,20 +426,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/SFX
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/SFX
   m_LastFoldersGridSize: 16
   m_LastProjectPath: E:\Users\Charles\Documents\My Games\Unity-Workspace\ASotI_IceBreaker
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 462a0000
-    m_LastClickedID: 10822
-    m_ExpandedIDs: 00000000102a0000802a0000c02a000000ca9a3b
+    m_SelectedIDs: 602d0000
+    m_LastClickedID: 11616
+    m_ExpandedIDs: 00000000142a0000882a0000c82a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -467,7 +467,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000102a0000802a0000c02a000000ca9a3b
+    m_ExpandedIDs: 00000000142a0000882a0000c82a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -511,7 +511,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 8}
+      m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -549,9 +549,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 1a990000
-    m_LastClickedID: 39194
-    m_ExpandedIDs: c299e8ffdc99e8ff2cabe8ff4aabe8ff0abae8ff92d1e8ff9a15e9ffc237e9ff9e38e9ffec4ce9ff848be9ff38d1e9ffaae3e9ffc8e3e9ffaa1ceaff8c23eaffaa23eaff323eeaff805deaff5e76eaff7c76eaff0e88eaff4816ecff6216ecffcc29ecff762cecff382fecffaa32ecffe433ecffb839ecff883cecffa648ecffc448ecffee8decfff08decff2ce4ecff2ee4ecffa8f4ecffca10edffaac0edffccf7edffc67aefff4cc1efff861af0ffea4bf0ff767ff0ff90c1f0ffc6e4f0ffa00cf1ff5e3bf1ff5667f1ffd278f1fff052f2ffe012f4ff58b9f4ff3270f5ffea93f5ff3ab5f5ffdeb6f5ff90c5f5ff8a0af6ffae0df6ff5654f6ffc86bf6ff6486f6ff8286f6ffe087f6ff86fff6ff2230feff8a39feffa839feff685bfeffcc61feffea61feffee73feff3e84feff8c8afeffaa8afeff54aafeff72aafeffbe01ffff1afbfffff4ffffff0000000090340000a0340000323900003a390000ec4e0000f44e000070500000f4500000fc500000fc5100000452000078520000fc520000ee5d0000f65d00002e660000aa6d0000f46d00000c6e00002a6e0000a66f0000ae6f0000b66f00002a710000647100007c710000c4730000f4740000fc740000047500001475000056750000ac770000b6770000968200009e820000a6820000de820000e6820000ee820000808c0000908c0000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: a85cf8ffa473f8ff5c75f8ff3ab6f8ffa6f5f8ffda1ef9ffb446f9ffd878f9ffda87f9ff9c96f9ff5aa5f9fff6cbf9fff007fbff2481fbffb492fbff9a11fcffb020fcffa266fcffcaa5fcff16b7fcff1cc6fcff2462fdfff484fdff5a97fdff5298fdffb6a6fdffbec2fdffb8d1fdff26e3fdff4cf2fdffb803feff1613feffee24feff7a3bfefffc50feffba52feff8862feff1afbfffff4ffffff00000000164200002851000038510000fa5a00000a5b0000bc630000cc630000cc640000dc640000d4650000e4650000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -570,7 +570,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 
   m_ExpandedScenes:
-  - CreditsScene
+  - MainMenuScene
   m_CurrenRootInstanceID: 0
   m_LockTracker:
     m_IsLocked: 0
@@ -601,14 +601,14 @@ MonoBehaviour:
     height: 664
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 11004.695789028754
+  lastFramingTime: 1967.1839501698987
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 13.430896, y: 7.258681, z: 163.51007}
+    m_Target: {x: 9.118908, y: -1.6618769, z: -0.34810886}
     speed: 2
-    m_Value: {x: 13.430896, y: 7.258681, z: 163.51007}
+    m_Value: {x: 9.118908, y: -1.6618769, z: -0.34810886}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -640,9 +640,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 20.492912
+    m_Target: 37.16864
     speed: 2
-    m_Value: 20.492912
+    m_Value: 37.16864
   m_Ortho:
     m_Target: 1
     speed: 2

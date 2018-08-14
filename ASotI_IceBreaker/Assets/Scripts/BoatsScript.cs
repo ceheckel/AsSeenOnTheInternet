@@ -14,11 +14,12 @@ public class BoatsScript : MonoBehaviour {
 	public GameObject ibTemp;
 	public Sprite[] frSprites;
 
+	private GameObject[] boats;
 	private List<GameObject> freighters;
 	private List<GameObject> iceBreakers;
-	private bool boatsCloned = false;
 	private int launchNumber;
 	private float restartTimer;
+	private bool boatsCloned;
 
 
 	//
@@ -32,15 +33,12 @@ public class BoatsScript : MonoBehaviour {
 	//
 	internal void InitLevel()
 	{
-		if (freighters == null || freighters.Count == 0 || 
-			iceBreakers == null || iceBreakers.Count == 0)
-		{
-			boatsCloned = false;
-		}
-		else if (freighters != null || iceBreakers != null)
-		{
-			GetAllBoats();
-		}
+		boats = GameObject.FindGameObjectsWithTag("Boat");
+		if (boats == null) { Debug.LogWarning("No boats found"); }
+
+		if (freighters != null || iceBreakers != null) { GetAllBoats(); }
+
+		boatsCloned = false;
 
 		RestartFreighterSprite();
 	}
@@ -89,7 +87,7 @@ public class BoatsScript : MonoBehaviour {
 	// 
 	internal void CreateBoats()
 	{
-		// only clone boats once
+		// prevent multiple boat sets
 		if (boatsCloned) { return; }
 
 		// clone the freighter "numFrs" number of times
@@ -188,6 +186,7 @@ public class BoatsScript : MonoBehaviour {
 	internal void StopLaunch()
 	{
 		StopAllCoroutines();
+		RestartLaunchSequence();
 		Debug.Log("Launches Stopped");
 	}
 
@@ -232,6 +231,13 @@ public class BoatsScript : MonoBehaviour {
 
 
 	//
+	internal int GetLaunchSequence()
+	{
+		return launchNumber;
+	}
+
+
+	//
 	internal void GetAllBoats()
 	{
 		Object[] array = Resources.FindObjectsOfTypeAll(typeof(GameObject));
@@ -242,10 +248,12 @@ public class BoatsScript : MonoBehaviour {
 		{
 			if (array[i].name.Contains("IB ["))
 			{
+				Debug.Log("object, " + i + ", is an IB");
 				iceBreakers.Add((GameObject)array[i]);
 			}
 			else if (array[i].name.Contains("FR ["))
 			{
+				Debug.Log("object, " + i + ", is an FR");
 				freighters.Add((GameObject)array[i]);
 			}
 		}

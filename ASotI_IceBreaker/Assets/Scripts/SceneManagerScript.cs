@@ -60,11 +60,11 @@ public class SceneManagerScript : MonoBehaviour {
 		if (reset) gameObject.GetComponent<StatsScript>().ClearStats(); // reset stats
 
 		gameObject.GetComponent<TilesScript>().InitLevel(); // make reference connections
-		gameObject.GetComponent<TilesScript>().CreateTiles(); // create tile objects
+		if (reset) gameObject.GetComponent<TilesScript>().CreateTiles(); // create tile objects
 		gameObject.GetComponent<TilesScript>().ChangeTiles(); // give objects new sprites
 
 		gameObject.GetComponent<BoatsScript>().InitLevel(); // make reference connections
-		gameObject.GetComponent<BoatsScript>().CreateBoats(); // create boat objects
+		if (reset) gameObject.GetComponent<BoatsScript>().CreateBoats(); // create boat objects
 		gameObject.GetComponent<BoatsScript>().SetBoatsActive(false);
 		gameObject.GetComponent<BoatsScript>().RestartLaunchSequence();
 		gameObject.GetComponent<BoatsScript>().RestartFinishStatus();
@@ -81,13 +81,13 @@ public class SceneManagerScript : MonoBehaviour {
 		switch (level)
 		{
 			case 0: /* Logic for return to main menu */
-					//gameObject.GetComponent<StatsScript>().ClearStats(); // reset stats
-					//gameObject.GetComponent<TilesScript>().ClearField(); // empty in-field
 				gameObject.GetComponent<BoatsScript>().StopLaunch();
 				break;
 
 			case 1: /* Logic for transition to tutorial */
+				gameObject.GetComponent<BoatsScript>().StopLaunch();
 				gameObject.GetComponent<BoatsScript>().SetBoatsActive(true);
+
 				gameObject.GetComponent<ArrowScript>().FindArrow();
 				gameObject.GetComponent<ArrowScript>().RestartLaunchSequence();
 				break;
@@ -100,14 +100,9 @@ public class SceneManagerScript : MonoBehaviour {
 				gameObject.GetComponent<TilesScript>().InitLevel(); // make reference connections
 				gameObject.GetComponent<TilesScript>().OpenField(); // set border only
 
-				gameObject.GetComponent<BoatsScript>().InitLevel(); // make reference connections
-				gameObject.GetComponent<BoatsScript>().CreateBoats(); // create boat objects
-				gameObject.GetComponent<BoatsScript>().SetBoatsActive(true);
-
-				//gameObject.GetComponent<BoatsScript>().CreditsBuild(); // create boats for credits
-
-				//gameObject.GetComponent<GUIScript>().CreditsBuild(); // create buttons
+				gameObject.GetComponent<BoatsScript>().StopLaunch();
 				break;
+
 		} // end of switch-case
 	} // end of OnLevelWasLoaded()
 

@@ -61,6 +61,9 @@ public class MovementScript : MonoBehaviour {
 		if (gameObject.name.Contains("FR") &&
 			collision.collider.tag.Equals("Obstacle"))
 		{
+			// ... play sfx
+			FindObjectOfType<AudioManagerScript>().PlayRandom();
+
 			// ... change sprite
 			sm.GetComponent<BoatsScript>().ChangeFreighter(gameObject);
 
@@ -72,6 +75,9 @@ public class MovementScript : MonoBehaviour {
 		else if (gameObject.name.Contains("IB") &&
 			collision.collider.tag.Equals("Obstacle"))
 		{
+			// ... play sfx
+			FindObjectOfType<AudioManagerScript>().PlayRandom();
+			
 			// ... change ice sprite
 			sm.GetComponent<TilesScript>().BreakSprite(collision.gameObject);
 		}
