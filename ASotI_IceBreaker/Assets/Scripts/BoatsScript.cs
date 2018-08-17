@@ -14,7 +14,6 @@ public class BoatsScript : MonoBehaviour {
 	public GameObject ibTemp;
 	public Sprite[] frSprites;
 
-	private GameObject[] boats;
 	private List<GameObject> freighters;
 	private List<GameObject> iceBreakers;
 	private int launchNumber;
@@ -33,12 +32,9 @@ public class BoatsScript : MonoBehaviour {
 	//
 	internal void InitLevel()
 	{
-		boats = GameObject.FindGameObjectsWithTag("Boat");
-		if (boats == null) { Debug.LogWarning("No boats found"); }
-
+		// determine if boats need to be cloned or found
 		if (freighters != null || iceBreakers != null) { GetAllBoats(); }
-
-		boatsCloned = false;
+		else { boatsCloned = false; }
 
 		RestartFreighterSprite();
 	}
@@ -127,23 +123,13 @@ public class BoatsScript : MonoBehaviour {
 	//
 	internal void ChangeFreighter(GameObject fr)
 	{
-		for (int i = 0; i < frSprites.Length-1; i += 1)
+		fr.GetComponent<Animator>().SetInteger("Health",
+			fr.GetComponent<Animator>().GetInteger("Health") - 1);
+
+		if (fr.GetComponent<Animator>().GetInteger("Health") < 0)
 		{
-			if (fr.GetComponent<SpriteRenderer>().sprite == frSprites[i])
-			{
-				fr.GetComponent<SpriteRenderer>().sprite = frSprites[i + 1];
-				
-				// prevent ship from sinking after one hit
-				return;
-			}
+			Invoke("Sink", 2f);
 		}
-
-		// if sprite not found, freighter has no health
-		// play sinking animation
-		Debug.Log("Sinking");
-
-		// move to credits
-		gameObject.GetComponent<SceneManagerScript>().LoadLevel(3);
 	}
 
 
@@ -152,9 +138,19 @@ public class BoatsScript : MonoBehaviour {
 	{
 		foreach (GameObject fr in freighters)
 		{
-			fr.GetComponent<SpriteRenderer>().sprite = frSprites[0];
+			//fr.GetComponent<SpriteRenderer>().sprite = frSprites[0];
+			fr.GetComponent<Animator>().SetInteger("Health", 4);
 		}
 	}
+
+
+	//
+	private void Sink()
+	{
+		// move to credits
+		gameObject.GetComponent<SceneManagerScript>().LoadLevel(3);
+	}
+
 
 	//
 	internal void SetBoatsActive(bool val)
@@ -248,12 +244,10 @@ public class BoatsScript : MonoBehaviour {
 		{
 			if (array[i].name.Contains("IB ["))
 			{
-				Debug.Log("object, " + i + ", is an IB");
 				iceBreakers.Add((GameObject)array[i]);
 			}
 			else if (array[i].name.Contains("FR ["))
 			{
-				Debug.Log("object, " + i + ", is an FR");
 				freighters.Add((GameObject)array[i]);
 			}
 		}

@@ -145,8 +145,8 @@ MonoBehaviour:
   frTemp: {fileID: 1026133490325572, guid: c746636ea9a18b544b54587d9f81f74f, type: 2}
   ibTemp: {fileID: 1182086929427752, guid: 6557c1ddd9aae06469f701e9ab5e7b45, type: 2}
   frSprites:
-  - {fileID: 21300072, guid: d4b09217b194f104191c6528b03991f0, type: 3}
-  - {fileID: 21300074, guid: d4b09217b194f104191c6528b03991f0, type: 3}
-  - {fileID: 21300076, guid: d4b09217b194f104191c6528b03991f0, type: 3}
-  - {fileID: 21300078, guid: d4b09217b194f104191c6528b03991f0, type: 3}
   - {fileID: 21300080, guid: d4b09217b194f104191c6528b03991f0, type: 3}
+  - {fileID: 21300078, guid: d4b09217b194f104191c6528b03991f0, type: 3}
+  - {fileID: 21300076, guid: d4b09217b194f104191c6528b03991f0, type: 3}
+  - {fileID: 21300074, guid: d4b09217b194f104191c6528b03991f0, type: 3}
+  - {fileID: 21300072, guid: d4b09217b194f104191c6528b03991f0, type: 3}

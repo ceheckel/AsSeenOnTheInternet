@@ -61,14 +61,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AudioManagerScript.cs" />
     <Compile Include="Assets\Scripts\ArrowScript.cs" />
+    <Compile Include="Assets\Scripts\AudioManagerScript.cs" />
     <Compile Include="Assets\Scripts\BoatsScript.cs" />
     <Compile Include="Assets\Scripts\MovementScript.cs" />
     <Compile Include="Assets\Scripts\SceneManagerScript.cs" />
+    <Compile Include="Assets\Scripts\Sound.cs" />
     <Compile Include="Assets\Scripts\StatsScript.cs" />
     <Compile Include="Assets\Scripts\TilesScript.cs" />
-    <Compile Include="Assets\Sound.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/Users/Charles/Documents/My Games/Unity-Workspace/ASotI_IceBreaker/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

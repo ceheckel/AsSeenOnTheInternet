@@ -45,6 +45,10 @@ TextureImporter:
     21300080: Ship_Freighter_0
     21300082: Ship_IB
     21300084: PlayerArrow
+    21300086: Ship_Freighter_-1
+    21300088: Ship_Freighter_-2
+    21300090: Ship_Freighter_-3
+    21300092: Ship_Freighter_-4
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -592,8 +596,8 @@ TextureImporter:
       name: Ship_IB
       rect:
         serializedVersion: 2
-        x: 128
-        y: 128
+        x: 64
+        y: 160
         width: 32
         height: 64
       alignment: 2
@@ -773,7 +777,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 64
+        y: 0
         width: 32
         height: 64
       alignment: 7
@@ -944,6 +948,86 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 49974b6677ab84e4b8f9c06861850eea
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_Freighter_-1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 32
+        height: 128
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a3757fd07eab740be0db488826a71a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_Freighter_-2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 128
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f11fbc782b55e84f9c959df86b6b103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_Freighter_-3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 128
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8d45aed8dbf86142942e7de5b22c1f2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ship_Freighter_-4
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 128
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca01b49b026e82d4a8750cd010ea808b
       vertices: []
       indices: 
       edges: []
