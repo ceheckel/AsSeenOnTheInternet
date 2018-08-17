@@ -83,8 +83,8 @@ public class BoatsScript : MonoBehaviour {
 	// 
 	internal void CreateBoats()
 	{
-		// prevent multiple boat sets
-		if (boatsCloned) { return; }
+		//// prevent multiple boat sets
+		//if (boatsCloned) { return; }
 
 		// clone the freighter "numFrs" number of times
 		for (int i = 0; i < numFrs; i += 1)
@@ -116,7 +116,7 @@ public class BoatsScript : MonoBehaviour {
 			iceBreakers.Add(obj);
 		}
 
-		boatsCloned = true;
+		//boatsCloned = true;
 	} // end of CreateBoats()
 
 
@@ -183,7 +183,6 @@ public class BoatsScript : MonoBehaviour {
 	{
 		StopAllCoroutines();
 		RestartLaunchSequence();
-		Debug.Log("Launches Stopped");
 	}
 
 

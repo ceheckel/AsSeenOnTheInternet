@@ -49,6 +49,7 @@ TextureImporter:
     21300088: Ship_Freighter_-2
     21300090: Ship_Freighter_-3
     21300092: Ship_Freighter_-4
+    21300094: Empty
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -1028,6 +1029,26 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ca01b49b026e82d4a8750cd010ea808b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Empty
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 160
+        width: 32
+        height: 32
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f277e229448158f4b9ccb5081e705f07
       vertices: []
       indices: 
       edges: []

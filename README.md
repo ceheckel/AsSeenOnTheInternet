@@ -53,7 +53,7 @@ to hit a baseball as far 'outta the park' as possible with the player's score
 incrementing with distance.  
 
 ### Protect the Balloon (ASotI 05)
-** Not yet in development**
+**Not yet in development**
 
 Protect the balloon is a 2d single player mobile game in which the goal is to 
 prevent procedurally spawned objects from falling onto your balloon.  The 

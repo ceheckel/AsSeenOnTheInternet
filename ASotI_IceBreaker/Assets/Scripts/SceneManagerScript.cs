@@ -101,6 +101,9 @@ public class SceneManagerScript : MonoBehaviour {
 				gameObject.GetComponent<TilesScript>().OpenField(); // set border only
 
 				gameObject.GetComponent<BoatsScript>().StopLaunch();
+				gameObject.GetComponent<BoatsScript>().SetBoatsActive(false);
+
+				gameObject.GetComponent<StatsScript>().FindStats(); // make reference connections
 				break;
 
 		} // end of switch-case

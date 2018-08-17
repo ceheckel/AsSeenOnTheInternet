@@ -82,3 +82,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Crash5
+    clip: {fileID: 8300000, guid: 9177f96b5952dbf4e88508ff98c1bfca, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Crash6
+    clip: {fileID: 8300000, guid: 14ac5a56263cc3f46990fe3c3e15f02a, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

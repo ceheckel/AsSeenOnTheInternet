@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 public class StatsScript : MonoBehaviour {
 
 	// references
-	private GameObject levelLabel;
-	private GameObject launchLabel;
-	private GameObject scoreLabel;
+	private GameObject levelValue;
+	private GameObject launchValue;
+	private GameObject scoreValue;
 	private int levelNum;
 	private int launchNum;
 	private float score;
@@ -19,9 +19,9 @@ public class StatsScript : MonoBehaviour {
 		GameObject[] stat = GameObject.FindGameObjectsWithTag("Stat");
 		foreach (GameObject s in stat)
 		{
-			if (s.name.Contains("Level")) { levelLabel = s; }
-			if (s.name.Contains("Launch")) { launchLabel = s; }
-			if (s.name.Contains("Score")) { scoreLabel = s; }
+			if (s.name.Contains("Level - Value")) { levelValue = s; }
+			if (s.name.Contains("Launches - Value")) { launchValue = s; }
+			if (s.name.Contains("Score - Value")) { scoreValue = s; }
 		}
 	}
 
@@ -30,15 +30,19 @@ public class StatsScript : MonoBehaviour {
 	private void Update()
 	{
 		// during the game ...
-		if (SceneManager.GetActiveScene().name.Equals("LevelScene"))
+		if (SceneManager.GetActiveScene().name.Equals("LevelScene") ||
+			SceneManager.GetActiveScene().name.Equals("CreditsScene"))
 		{
-			// continually update text fields
-			levelLabel.GetComponent<Text>().text = GetLevelValue().ToString();
-			launchLabel.GetComponent<Text>().text = GetLaunchValue().ToString();
-			scoreLabel.GetComponent<Text>().text = ((int)GetScoreValue()).ToString();
+			// ... continually update text fields
+			levelValue.GetComponent<Text>().text = GetLevelValue().ToString();
+			launchValue.GetComponent<Text>().text = GetLaunchValue().ToString();
+			scoreValue.GetComponent<Text>().text = ((int)GetScoreValue()).ToString();
 
-			// ... decrement score with time
-			SetScoreValue(GetScoreValue() - Time.deltaTime);
+			if (SceneManager.GetActiveScene().name.Equals("LevelScene"))
+			{
+				// ... decrement score with time
+				SetScoreValue(GetScoreValue() - Time.deltaTime);
+			}
 		}
 	}
 
