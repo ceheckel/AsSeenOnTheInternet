@@ -24,8 +24,6 @@ discussed in Brackeys' tutorial series has been implemented into this first
 game.
 
 ### Ice Breaker (ASotI 02)
-**Development in Progress**
-
 Ice Breaker is a 2-dimensional [Bubble Shooter](http://www.bubblegame.org/) style game in which the 
 objective is to clear the playing field by hitting the ice blocks with your 
 launched ice breaking boats a set number of times, the number of times each 
