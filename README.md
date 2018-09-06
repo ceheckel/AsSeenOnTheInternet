@@ -31,7 +31,7 @@ object needs to be hit is determined by the density of the sprite, and levels
 are be randomly generated.
 
 ### Spindle (ASotI 03)
-**Not yet in development**
+**Development in Progress**
 
 Spindle is my take on an unidentified game found in an on-line advertisement.
 The game features a 3-dimensional spindle shape of infinite length with 
