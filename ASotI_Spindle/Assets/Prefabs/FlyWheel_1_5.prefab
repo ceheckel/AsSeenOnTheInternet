@@ -38,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4574512020196998}
   - component: {fileID: 95400345664398962}
+  - component: {fileID: 114999447220960420}
   m_Layer: 0
   m_Name: FlyWheel_1_5
   m_TagString: Platform
@@ -90,7 +91,7 @@ Transform:
   m_GameObject: {fileID: 1506659232347132}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 0.25}
   m_Children: []
   m_Father: {fileID: 4574512020196998}
   m_RootOrder: 2
@@ -329,6 +330,18 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506659232347132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b9b44e16217e14b8d44ed83e35e247, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedScale: 6
+--- !u!114 &114999447220960420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1474978227329566}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b9b44e16217e14b8d44ed83e35e247, type: 3}
