@@ -10,7 +10,7 @@ public class PlatformManagementScript : MonoBehaviour {
 
 	internal GameObject[] platforms;
 	private int index; // index counter for next open spot in platforms array
-	private readonly int numPlats = 4;
+	private readonly int numPlats = 5;
 	private static PlatformManagementScript instance;
 
 	private void Awake()
@@ -24,14 +24,8 @@ public class PlatformManagementScript : MonoBehaviour {
 	void Start () {
 		platforms = new GameObject[numPlats];
 		index = 0;
-
-		Debug.Log("index0: " + index);
-
+		
 		int numFound = FindPlatforms();
-
-		Debug.Log("index1: " + index);
-		Debug.Log("found1: " + numFound);
-
 		if (numFound < numPlats)
 		{
 			for (int i = numFound; i < numPlats; i += 1)
@@ -69,25 +63,17 @@ public class PlatformManagementScript : MonoBehaviour {
 	internal void AddPlatform()
 	{
 		Vector3 pos;
-		Quaternion rot;
+		Quaternion rot = new Quaternion(0, Random.Range(0, 359), 0, 0);
 		Transform par = GameObject.Find("Platforms").transform;
 
 		// get platform template
 		if (platforms[PrevIndex()] == null)
 		{
-
-			Debug.Log("index2: " + index);
-
 			pos = new Vector3(0, -5, 0);
-			rot = new Quaternion();
 		}
 		else
 		{
 			pos = new Vector3(0, platforms[PrevIndex()].transform.position.y - 5, 0);
-			rot = platforms[PrevIndex()].transform.rotation;
-
-			Debug.Log("index3: " + index);
-
 		}
 
 		// create new object at the bottom of the post
@@ -95,9 +81,6 @@ public class PlatformManagementScript : MonoBehaviour {
 
 		// manage counter
 		IncIndex();
-
-		Debug.Log("index4: " + index);
-
 	}
 
 	internal void RemovePlatform()

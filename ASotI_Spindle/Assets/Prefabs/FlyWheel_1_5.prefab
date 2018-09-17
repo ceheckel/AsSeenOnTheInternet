@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33453319964926500}
   - component: {fileID: 23595767672433204}
   - component: {fileID: 64722026425585200}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder_DEAD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,8 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4574512020196998}
   - component: {fileID: 95400345664398962}
-  - component: {fileID: 114999447220960420}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FlyWheel_1_5
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -57,8 +56,8 @@ GameObject:
   - component: {fileID: 33980939943639358}
   - component: {fileID: 23418539081857546}
   - component: {fileID: 64983238779634468}
-  - component: {fileID: 114432243369499004}
-  m_Layer: 0
+  - component: {fileID: 114519159620664986}
+  m_Layer: 10
   m_Name: Cylinder_TRIGGER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +75,7 @@ GameObject:
   - component: {fileID: 33328107095423594}
   - component: {fileID: 23958145221170668}
   - component: {fileID: 64711685133016462}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder_LIVE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +143,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506659232347132}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -324,7 +323,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114432243369499004
+--- !u!114 &114519159620664986
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -332,19 +331,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1506659232347132}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8b9b44e16217e14b8d44ed83e35e247, type: 3}
+  m_Script: {fileID: 11500000, guid: f7306da283efccf499d7a94573329365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedScale: 6
---- !u!114 &114999447220960420
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1474978227329566}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8b9b44e16217e14b8d44ed83e35e247, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedScale: 6

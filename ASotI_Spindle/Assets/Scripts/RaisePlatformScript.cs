@@ -1,34 +1,34 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RaisePlatformScript : MonoBehaviour
 {
-
-	public float speedScale;
-
+	// references 
+	private Rigidbody prb;
 	private GameObject gc;
 	private Vector3 target;
-	private bool needsRaise;
+	private int needsRaise; // number of times the platforms need to be raised
 
 	private void Awake()
 	{
 		gc = GameObject.Find("GameController");
 		if (gc == null) { Debug.LogWarning("RaisePlatformScript: gc not found"); }
 
+		prb = GameObject.Find("Player").GetComponent<Rigidbody>();
+		if (prb == null) { Debug.LogWarning("RaisePlatformScript: prb not found"); }
+
 		target = new Vector3(0, 5, 0);
-		needsRaise = false;
+		needsRaise = 0;
 	}
 
-	private void OnTriggerEnter(Collider other)
+	internal void IncRaiseValue()
 	{
 		// Begin platform raising process
-		needsRaise = true;
+		needsRaise += 1;
 	}
 
 	private void Update()
 	{
-		if (needsRaise)
+		if (needsRaise > 0)
 		{
 			foreach (GameObject p in gc.GetComponent<PlatformManagementScript>().platforms)
 			{
@@ -39,21 +39,21 @@ public class RaisePlatformScript : MonoBehaviour
 						(
 							p.transform.position,
 							target,
-							Time.deltaTime * speedScale
+							Time.deltaTime * 3
 						);
 
 					// when a platform reaches the top ...
 					if (p.transform.position.y >= 5)
 					{
 						// ... Stop raising platforms
-						needsRaise = false;
+						needsRaise -= 1;
+
+						Debug.Log(needsRaise);
 
 						// ... Destroy platform, p
-						Debug.Log("Dead");
 						gc.GetComponent<PlatformManagementScript>().RemovePlatform();
 
 						// ... Create new platform
-						Debug.Log("Create");
 						gc.GetComponent<PlatformManagementScript>().AddPlatform();
 					}
 				}

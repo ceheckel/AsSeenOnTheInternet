@@ -20,8 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4707788465172532}
   - component: {fileID: 95839710973446464}
-  - component: {fileID: 114643013322779102}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FlyWheel_1_4
   m_TagString: Platform
   m_Icon: {fileID: 0}
@@ -39,8 +38,8 @@ GameObject:
   - component: {fileID: 33179778661524254}
   - component: {fileID: 23964064289339538}
   - component: {fileID: 64542837270004156}
-  - component: {fileID: 114925716424293006}
-  m_Layer: 0
+  - component: {fileID: 114338811835535464}
+  m_Layer: 10
   m_Name: Cylinder_TRIGGER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +57,7 @@ GameObject:
   - component: {fileID: 33114706273016620}
   - component: {fileID: 23695472576770254}
   - component: {fileID: 64369898026962040}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder_LIVE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +75,7 @@ GameObject:
   - component: {fileID: 33836715055413770}
   - component: {fileID: 23774000395141692}
   - component: {fileID: 64641645266689360}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cylinder_DEAD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +213,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1151224440331680}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -324,19 +323,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114643013322779102
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1141261107122290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8b9b44e16217e14b8d44ed83e35e247, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speedScale: 6
---- !u!114 &114925716424293006
+--- !u!114 &114338811835535464
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -344,7 +331,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 1151224440331680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8b9b44e16217e14b8d44ed83e35e247, type: 3}
+  m_Script: {fileID: 11500000, guid: f7306da283efccf499d7a94573329365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedScale: 6
