@@ -1,15 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class RotatePlatformScript : MonoBehaviour {
 
 	// references
+	public bool moveEnabled;
+
 	private Vector2 touchOrigin = -Vector2.one;
 
 	// Use this for initialization
 	void Start () {
-		
+		moveEnabled = true;
 	}
 	
 	// Update is called once per frame
@@ -79,11 +79,20 @@ public class RotatePlatformScript : MonoBehaviour {
 		}
 	} // end of Update
 
+	// rotate the flywheels based on the previously calculated direction
+	// only works if moveEnabled is true
 	private void Rotate(int direction)
 	{
-		if (direction < 0)
+		if (moveEnabled && (direction < 0))
 			gameObject.transform.Rotate(Vector3.down);
-		if (direction > 0)
+		if (moveEnabled && (direction > 0))
 			gameObject.transform.Rotate(Vector3.up);
 	} // end of Rotate
+
+	// setter for the moveEnabled boolean
+	// typically called when game is ending or starting
+	internal void SetMoveEnable(bool val)
+	{
+		moveEnabled = val;
+	}
 }

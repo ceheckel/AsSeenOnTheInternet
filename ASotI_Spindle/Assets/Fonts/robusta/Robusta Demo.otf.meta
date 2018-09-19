@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: f951bc1af5f0e014a8010eee66d9c66d
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Robusta Demo
+  fontNames:
+  - Robusta Demo
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 313d123df9a82914dbbe47ee7c64bec8, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

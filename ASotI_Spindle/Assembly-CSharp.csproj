@@ -61,11 +61,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\CallDeathScript.cs" />
     <Compile Include="Assets\Scripts\CallRaiseScript.cs" />
+    <Compile Include="Assets\Scripts\GameManagementScript.cs" />
     <Compile Include="Assets\Scripts\PlatformManagementScript.cs" />
     <Compile Include="Assets\Scripts\RaisePlatformScript.cs" />
     <Compile Include="Assets\Scripts\ResetMomentumScript.cs" />
     <Compile Include="Assets\Scripts\RotatePlatformScript.cs" />
+    <None Include="Assets\Fonts\the_road_ahead\Font ReadMe- The Road Ahead.txt" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>E:/Users/Charles/Documents/My Games/Unity-Workspace/ASotI/ASotI_Spindle/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

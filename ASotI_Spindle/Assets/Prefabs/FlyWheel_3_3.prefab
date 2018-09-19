@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 33345558387552340}
   - component: {fileID: 23311622638302314}
   - component: {fileID: 64409477122492130}
+  - component: {fileID: 114154259075935444}
   m_Layer: 10
   m_Name: Cylinder_DEAD
   m_TagString: Untagged
@@ -323,6 +324,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114154259075935444
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1209953542542998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db298dc4ec858e74ab801a49236d976c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114843032035420714
 MonoBehaviour:
   m_ObjectHideFlags: 1

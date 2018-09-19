@@ -48,8 +48,6 @@ public class RaisePlatformScript : MonoBehaviour
 						// ... Stop raising platforms
 						needsRaise -= 1;
 
-						Debug.Log(needsRaise);
-
 						// ... Destroy platform, p
 						gc.GetComponent<PlatformManagementScript>().RemovePlatform();
 
