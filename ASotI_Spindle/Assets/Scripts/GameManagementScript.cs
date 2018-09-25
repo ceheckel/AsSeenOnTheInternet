@@ -7,7 +7,8 @@ public class GameManagementScript : MonoBehaviour {
 	public static GameManagementScript instance; // singleton
 	[HideInInspector]
 	public bool gameOn; // globally visible boolean to show game status
-
+	
+	private int score;
 	private GameObject play; // reference to player object
 	private GameObject canv; // reference to the game's end screen
 	private GameObject plat; // reference to the platforms container
@@ -26,12 +27,13 @@ public class GameManagementScript : MonoBehaviour {
 	private void Start()
 	{
 		SetGameOn(true);
+		SetScore(0);
 
 		play = GameObject.Find("Player");
 		if (play == null) { Debug.LogWarning("GameManagementScript: Player not found"); }
 
-		canv = GameObject.Find("Canvas");
-		if (canv == null) { Debug.LogWarning("GameManagementScript: Canvas not found"); }
+		canv = GameObject.Find("End Game Canvas");
+		if (canv == null) { Debug.LogWarning("GameManagementScript: End Game Canvas not found"); }
 		canv.SetActive(false);
 
 		plat = GameObject.Find("Platforms");
@@ -44,6 +46,7 @@ public class GameManagementScript : MonoBehaviour {
 		// Exit Application with "ESC" or "Back" button on mobile
 		if (Input.GetKeyDown(KeyCode.Escape)) { ExitGame(); }
 
+		// Restart game
 		if ((gameOn == false) && (Input.anyKeyDown == true))
 		{
 			StartCoroutine("LowerEndGame");
@@ -55,7 +58,7 @@ public class GameManagementScript : MonoBehaviour {
 	{
 		// stop all movements
 		plat.GetComponent<RotatePlatformScript>().SetMoveEnable(false);
-		play.GetComponent<ResetMomentumScript>().Suspend(true);
+		play.GetComponent<BallMovementScript>().Suspend(true);
 		SetGameOn(false);
 
 		// raise UI
@@ -72,7 +75,7 @@ public class GameManagementScript : MonoBehaviour {
 
 		// enable all movements
 		plat.GetComponent<RotatePlatformScript>().SetMoveEnable(true);
-		play.GetComponent<ResetMomentumScript>().Suspend(false);
+		play.GetComponent<BallMovementScript>().Suspend(false);
 		SetGameOn(true);
 
 		// lower UI
@@ -89,4 +92,9 @@ public class GameManagementScript : MonoBehaviour {
 
 	// setter for gameOn variable
 	internal void SetGameOn(bool val) { gameOn = val; }
+	// setter for the score variable
+	internal void SetScore(int val) { score = val; }
+	// getter for the score variable
+	internal int GetScore() { return score; }
+
 }

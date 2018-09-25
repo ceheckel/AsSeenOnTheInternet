@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 33341674717413622}
   - component: {fileID: 23587743659088384}
   - component: {fileID: 64959537108623522}
+  - component: {fileID: 114293515834212642}
   m_Layer: 10
   m_Name: Cylinder_LIVE
   m_TagString: Untagged
@@ -324,6 +325,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114293515834212642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1932059260836526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb08789f69ac08a46b3599e2d4c5ab48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startColorRed: 1
+  duration: 1
+  rend: {fileID: 23706014521625388, guid: 8ee081d049e06f94e925298399e0d1ce, type: 2}
+  lerp: 0
 --- !u!114 &114725190004460240
 MonoBehaviour:
   m_ObjectHideFlags: 1

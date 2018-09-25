@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlatformManagementScript : MonoBehaviour {
 
@@ -85,6 +83,7 @@ public class PlatformManagementScript : MonoBehaviour {
 
 	internal void RemovePlatform()
 	{
+		// remove oldest platform
 		Destroy(platforms[index]);
 		platforms[index] = null;
 	}

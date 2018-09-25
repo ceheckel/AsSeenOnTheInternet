@@ -3,9 +3,9 @@
 public class RaisePlatformScript : MonoBehaviour
 {
 	// references 
-	private Rigidbody prb;
-	private GameObject gc;
-	private Vector3 target;
+	private Rigidbody prb; // player's rigidbody component
+	private GameObject gc; // GameController object
+	private Vector3 target; // target locations of each platform after raise
 	private int needsRaise; // number of times the platforms need to be raised
 
 	private void Awake()
@@ -20,12 +20,20 @@ public class RaisePlatformScript : MonoBehaviour
 		needsRaise = 0;
 	}
 
+	// increments the counter that corresponds to the number of tiers the
+	// platforms must be raised
 	internal void IncRaiseValue()
 	{
 		// Begin platform raising process
 		needsRaise += 1;
 	}
 
+	// getter for the needsRaise variable
+	// used before lowering the end game screen to prevent the ball from
+	// spawning early
+	internal int GetRaiseValue() { return needsRaise; }
+
+	// called once per frame
 	private void Update()
 	{
 		if (needsRaise > 0)
