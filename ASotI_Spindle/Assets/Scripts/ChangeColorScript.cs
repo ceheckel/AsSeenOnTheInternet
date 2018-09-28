@@ -5,7 +5,7 @@ public class ChangeColorScript : MonoBehaviour
 	public bool startColorRed = true;
 	public Renderer rend;
 
-	private int stageSize = 10;
+	private readonly int stageSize = 50;
 	private readonly Color[] colors = new Color[7];
 	private int currentColor = 0;
 
@@ -60,8 +60,8 @@ public class ChangeColorScript : MonoBehaviour
 	// change the currentColor variable based on the current score
 	private void UpdateStage()
 	{
-		// current color index equals the number of tens in the current score
+		// current color index equals the number of stageSizes in the current score
 		// when the current score reaches '80' the current color should reset to '0'
-		currentColor = (gm.GetComponent<GameManagementScript>().GetScore() / 10) % 7;
+		currentColor = (gm.GetComponent<GameManagementScript>().GetScore() / stageSize) % 7;
 	}
 }

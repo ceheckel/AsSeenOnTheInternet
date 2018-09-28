@@ -118,7 +118,7 @@ Transform:
   m_GameObject: {fileID: 1000222339557920}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 0.1, z: 1.5}
+  m_LocalScale: {x: 3, y: 0.2, z: 3}
   m_Children:
   - {fileID: 4182396596857550}
   - {fileID: 4938085123632312}
@@ -359,6 +359,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startColorRed: 1
-  duration: 1
   rend: {fileID: 23706014521625388, guid: 8ee081d049e06f94e925298399e0d1ce, type: 2}
-  lerp: 0

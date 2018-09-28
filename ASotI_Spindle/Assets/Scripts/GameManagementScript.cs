@@ -9,6 +9,7 @@ public class GameManagementScript : MonoBehaviour {
 	public bool gameOn; // globally visible boolean to show game status
 	
 	private int score;
+	private float gameTime;
 	private GameObject play; // reference to player object
 	private GameObject canv; // reference to the game's end screen
 	private GameObject plat; // reference to the platforms container
@@ -28,6 +29,7 @@ public class GameManagementScript : MonoBehaviour {
 	{
 		SetGameOn(true);
 		SetScore(0);
+		SetTime(0);
 
 		play = GameObject.Find("Player");
 		if (play == null) { Debug.LogWarning("GameManagementScript: Player not found"); }
@@ -51,6 +53,9 @@ public class GameManagementScript : MonoBehaviour {
 		{
 			StartCoroutine("LowerEndGame");
 		}
+
+		// Update gameTime variable
+		if (gameOn) { gameTime += 1 * Time.deltaTime; }
 	}
 
 	// Bring up the credits UI after player dies
@@ -78,6 +83,10 @@ public class GameManagementScript : MonoBehaviour {
 		play.GetComponent<BallMovementScript>().Suspend(false);
 		SetGameOn(true);
 
+		// reset score
+		SetScore(0);
+		SetTime(0);
+
 		// lower UI
 		canv.SetActive(false);
 
@@ -96,5 +105,9 @@ public class GameManagementScript : MonoBehaviour {
 	internal void SetScore(int val) { score = val; }
 	// getter for the score variable
 	internal int GetScore() { return score; }
+	// setter for the time variable
+	internal void SetTime(int val) { gameTime = val; }
+	// getter for the time variable
+	internal int GetTime() { return (int)gameTime; }
 
 }

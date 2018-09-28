@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\CallDeathScript.cs" />
     <Compile Include="Assets\Scripts\CallRaiseScript.cs" />
     <Compile Include="Assets\Scripts\ChangeColorScript.cs" />
+    <Compile Include="Assets\Scripts\CreateSplatterScript.cs" />
     <Compile Include="Assets\Scripts\GameManagementScript.cs" />
     <Compile Include="Assets\Scripts\PlatformManagementScript.cs" />
     <Compile Include="Assets\Scripts\RaisePlatformScript.cs" />

@@ -12,7 +12,7 @@ public class UpdateScoreScript : MonoBehaviour {
 		if (gc.GetComponent<GameManagementScript>().gameOn)
 		{
 			statText.text = "Score: " + gc.GetComponent<GameManagementScript>().GetScore() + "\n"
-				+ "Time: " + (int)Time.time;
+				+ "Time: " + gc.GetComponent<GameManagementScript>().GetTime();
 		}
 	}
 }
