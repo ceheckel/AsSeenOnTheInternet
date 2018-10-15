@@ -21,12 +21,12 @@ public class ChangeColorScript : MonoBehaviour
 		if (startColorRed == true)
 		{
 			colors[0] = Color.red;
-			colors[1] = new Color(1, 0.65f, 0, 1);		// orange
+			colors[1] = new Color(1, 0.65f, 0, 1);      // orange rgba(255,165,0,1 )
 			colors[2] = Color.yellow;
 			colors[3] = Color.green;
 			colors[4] = Color.blue;
-			colors[5] = new Color(0.29f, 0, 0.51f, 1);	// indigo
-			colors[6] = new Color(0.87f, 0.63f, 0.87f, 1);	// violet
+			colors[5] = new Color(0.29f, 0, 0.51f, 1);	// indigo rgba(75,0,130,1)
+			colors[6] = new Color(0.47f, 0.36f, 0.31f, 1);	// violet rgba(120,92,80,1)
 		}
 		else
 		{
@@ -35,8 +35,8 @@ public class ChangeColorScript : MonoBehaviour
 			colors[4] = Color.yellow;
 			colors[3] = Color.green;
 			colors[2] = Color.blue;
-			colors[1] = new Color(0.29f, 0, 0.51f, 1);  // indigo
-			colors[0] = new Color(0.87f, 0.63f, 0.87f, 1);  // violet
+			colors[1] = new Color(0.29f, 0, 130, 1);  // indigo
+			colors[0] = new Color(0.50f, 0, 0.50f, 1);  // violet
 		}
 	}
 

@@ -1,6 +1,6 @@
 WebGL
 PlayerPath?
-E:/Users/Charles/Documents/My Games/Unity-Workspace/ASotI_IceBreaker/Builds/WebGL
+E:/Users/Charles/Documents/My Games/Unity-Workspace/ASotI/ASotI_IceBreaker/Builds/WebGL
 SceneListBegin?
 Assets/Scenes/MainMenuScene.unity
 Assets/Scenes/TutorialScene.unity

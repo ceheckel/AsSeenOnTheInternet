@@ -1,11 +1,10 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour {
 
-    public Sound[] sounds;
-    public static AudioManager instance;
+	// references
+    public Sound[] sounds; // list of sounds in the game
 
     void Start()
     {
@@ -15,19 +14,6 @@ public class AudioManager : MonoBehaviour {
 
     void Awake()
     {
-        // check if there is currently an AudioManager for this scene
-        //if (instance == null)
-        //{
-        //    instance = this;
-        //} else
-        //{
-        //    // if there is, destroy it
-        //    Destroy(gameObject);
-        //    return;
-        //}
-
-        //DontDestroyOnLoad(gameObject);
-
         // for all sounds in the game ...
         foreach (Sound s in sounds)
         {
@@ -42,16 +28,19 @@ public class AudioManager : MonoBehaviour {
         } // end foreach
     } // end Awake
 
+	// plays the sound referenced by name specified in the parameters
     public void PlaySong(string name)
     {
         FindSong(name).source.Play();
     }
 
+	// stops the currently playing sound referenced by name
     public void StopSong(string name)
     {
         FindSong(name).source.Pause();
     }
 
+	// searches the list of sounds for a specific one referenced by name in the parameters
     private Sound FindSong(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);

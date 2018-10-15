@@ -61,18 +61,20 @@ public class ArrowScript : MonoBehaviour
 	}
 
 
-	//
+	// moves the launch arrow to the center on the opening
 	internal void RelocateArrow()
 	{
+		// if arrow is missing, find it
 		if (arrow == null) { FindArrow(); }
 
+		// set arrow location to center of lower gap
 		int newX = GetComponent<TilesScript>().GetLowerGapCenter();
 		arrow.transform.SetPositionAndRotation(
 			new Vector2(newX, -0.5f), Quaternion.identity);
 	}
 
 
-	//
+	// reset reference to the launch arrow in the hierarchy
 	internal void FindArrow()
 	{
 		// find the launch arrow in hierarchy
@@ -81,6 +83,6 @@ public class ArrowScript : MonoBehaviour
 	}
 
 
-	//
+	// reset launch sequence variable to stage zero
 	internal void RestartLaunchSequence() { launchNumber = 0; }
 }

@@ -12,8 +12,7 @@ public class StatsScript : MonoBehaviour {
 	private int launchNum;
 	private float score;
 	
-
-	//
+	// make the references for the the stats objects
 	internal void FindStats()
 	{
 		GameObject[] stat = GameObject.FindGameObjectsWithTag("Stat");
@@ -24,7 +23,6 @@ public class StatsScript : MonoBehaviour {
 			if (s.name.Contains("Score - Value")) { scoreValue = s; }
 		}
 	}
-
 
 	//
 	private void Update()
@@ -46,15 +44,13 @@ public class StatsScript : MonoBehaviour {
 		}
 	}
 
-
-	// functions
+	// reset the stats values to their default values
 	internal void ClearStats()
 	{
 		SetLevelValue(1);
 		SetLaunchValue(0);
 		SetScoreValue(0.0f);
 	}
-
 
 	// getter and setter for level number
 	internal void SetLevelValue(int val) { levelNum = val; }

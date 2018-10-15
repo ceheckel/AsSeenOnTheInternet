@@ -1,6 +1,6 @@
 WindowsStandalone
 PlayerPath?
-E:/Users/Charles/Documents/My Games/Unity-Workspace/ASotI_IceBreaker/Builds/Windows/x64/ASotI_IceBreaker.exe
+E:/Users/Charles/Documents/My Games/Unity-Workspace/ASotI/ASotI_IceBreaker/Builds/Facebook/Gameroom/Icebreaker.exe
 SceneListBegin?
 Assets/Scenes/MainMenuScene.unity
 Assets/Scenes/TutorialScene.unity

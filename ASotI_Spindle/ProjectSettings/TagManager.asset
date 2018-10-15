@@ -5,7 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Platform
-  - Damager
+  - UI
+  - SceneProp
   layers:
   - Default
   - TransparentFX

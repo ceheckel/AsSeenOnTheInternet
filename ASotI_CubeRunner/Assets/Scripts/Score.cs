@@ -1,23 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Score : MonoBehaviour {
 
-    public Transform player;
-    public Text scoreText;
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+	// references
+    public Transform player; // player position
+    public Text scoreText; // text object for score
 	
 	// Update is called once per frame
 	void Update () {
-        //Debug.Log("player z-position:" + player.position.z);
-
-        // assign player position as UI text
-        scoreText.text = player.position.z.ToString("0");
+        // assign player position as UI text with a minimum of four digit
+        scoreText.text = player.position.z.ToString("0000");
 	}
 }

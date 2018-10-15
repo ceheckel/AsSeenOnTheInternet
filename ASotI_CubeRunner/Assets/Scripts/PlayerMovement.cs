@@ -2,23 +2,22 @@
 
 public class PlayerMovement : MonoBehaviour {
 
-    public Rigidbody player_rigidbody;
-    public float player_xaccel;
-    public float player_yaccel;
-    public float player_zaccel;
+	// references
+    public Rigidbody player_rigidbody; // player object's physics object
+    public float player_xaccel; // left/right movement force
+    public float player_yaccel; // up/down movement force (unneeded)
+    public float player_zaccel; // forward/back movement force (unneeded)
 
 	// added for mobile support
 	private bool moveLeft;
 	private bool moveRight;
-
-
+	
     // Use this for initialization
     void Start () {
 		moveLeft = false;
 		moveRight = false;
 	}
-
-
+	
     // Update is called once per frame
     private void Update()
 	{
@@ -46,8 +45,8 @@ public class PlayerMovement : MonoBehaviour {
 #endif
 
 		// apply movement
-		if (moveLeft) { player_xaccel = 100f; }
-		else if (moveRight) { player_xaccel = -100f; }
+		if (moveLeft) { player_xaccel = 75f; }
+		else if (moveRight) { player_xaccel = -75f; }
 		else { player_xaccel = 0f; } // don't move
 	}
 
@@ -71,6 +70,7 @@ public class PlayerMovement : MonoBehaviour {
             player_rigidbody.AddForce(0, 0, player_zaccel * Time.deltaTime);
         }
 
+		// if player falls off platform, restart level
         if (player_rigidbody.position.y < -1f)
         {
             FindObjectOfType<GameManager>().EndGame();

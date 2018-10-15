@@ -19,56 +19,58 @@ public class TilesScript : MonoBehaviour {
 											 // [2] -> lower left gap edge
 											 // [3] -> lower right gap edge
 
-
 	//
 	void Start()
 	{
 		tiles = new List<GameObject>();
 	}
 
-
-	//
+	// create references to objects needed to create levels
 	internal void InitLevel()
 	{
+		// find tile template
 		tile = GameObject.FindGameObjectWithTag("Obstacle");
 		if (tile == null) { Debug.LogWarning("No tile object found"); }
 
+		// determine if their are tiles in the hierarchy
 		if (tiles != null) { GetAllTiles(); }
 
+		// reset gap openings
 		openingIndex[0] = 0; openingIndex[1] = 0;
 		openingIndex[2] = 0; openingIndex[3] = 0;
 
+		// prevent tile cloning process
 		tilesCloned = false;
 	}
 
-
-	//
+	// clone tile template to fill the game grid
 	internal void CreateTiles()
 	{
 		// prevent multiple tile sets
 		if (tilesCloned) { return; }
 		
+		// for each position on the grid ...
 		for (int y = 0; y < gridHeight; y += 1)
 		{
 			for (int x = 0; x < gridWidth; x += 1)
 			{
-				// clone the tile
+				// ... clone the tile
 				GameObject obj = Instantiate(tile) as GameObject;
 
-				// set additional properties
+				// ... set additional properties
 				obj.name = "Tile[" + x + "," + y + "]";
 				obj.transform.SetPositionAndRotation(
 					new Vector2(x, y), Quaternion.identity);
 				obj.transform.parent = tile.transform.parent;
 
-				// add to tracking list
+				// ... add to tracking list
 				tiles.Add(obj);
 			}
 		}
 
+		// mark cloning process as completed
 		tilesCloned = true;
 	} // end of CreateTiles()
-
 
 	// method that gives each tile on the play field a sprite dependant on position
 	// x	- position along the x axis of the grid
@@ -127,24 +129,28 @@ public class TilesScript : MonoBehaviour {
 		return s;
 	} // end of GenerateSprite()
 
-
-	//
+	// change the sprite of all the non-border tiles on the grid including the openings
 	internal void ChangeTiles()
 	{
+		// safety checks
 		if (tiles == null) { Debug.LogWarning("ChangeTiles(): tiles null"); return; }
 		if (tiles.Count == 0) { Debug.LogWarning("ChangeTiles(): tiles empty"); return; }
 
+		// get new opening points
 		NewOpening();
 		
+		// foreach tile on the grid ...
 		foreach (GameObject t in tiles)
 		{
+			// ... perform safety check on tile
 			if (t == null) { Debug.LogWarning("ChangeTiles(): tile is null"); return; }
 
+			// ... obtain a new sprite from the list of possible sprites
 			t.GetComponent<SpriteRenderer>().sprite = GenerateSprite(
 				(int)t.transform.position.x,
 				(int)t.transform.position.y);
 
-			// change polygon collider to resemble new sprite
+			// ... change polygon collider to resemble new sprite
 			// this is not a great way of updating the polygon,
 			// but this only occurs on level changes
 			if (t.GetComponent<PolygonCollider2D>() != null)
@@ -153,39 +159,38 @@ public class TilesScript : MonoBehaviour {
 			}
 			t.AddComponent<PolygonCollider2D>();
 
-			// disable "open water" tiles (prevents boat collision on 'nothing')
+			// ... disable "open water" tiles (prevents boat collision on 'nothing')
 			if (t.GetComponent<SpriteRenderer>().sprite.name.Equals("ow"))
 			{
 				t.SetActive(false);
 			}
+			// ... enable non-openwater tiles (prevent boats from lcipping through obstacles)
 			else
 			{
 				t.SetActive(true);
 			}
-			//Debug.Log(t.name + " Changed");
 		}
 	} // end of ChangeTiles()
 
-
-	//
+	// deactivate all tiles from the grid
 	internal void ClearField()
 	{
+		// safety checks
 		if (tiles == null) { Debug.LogWarning("ClearField(): tiles null");	return; }
 		if (tiles.Count == 0) { Debug.LogWarning("ClearField(): tiles empty");	return; }
 		
+		// for each tile in the grid ...
 		foreach (GameObject t in tiles)
 		{
-			Debug.Log(t);
-			if (t.activeInHierarchy) { t.SetActive(false);
-				Debug.Log(t.name + " disabled");
-			}
+			// ... if it is active in the hierarchy, disable it
+			if (t.activeInHierarchy) { t.SetActive(false); }
 		}
 	} // end of ClearField
 
-
-	//
+	// deactivate all non-border tiles from the grid
 	internal void OpenField()
 	{
+		// safety check
 		if (tiles == null) { return; }
 
 		// remove boarder openings
@@ -209,8 +214,7 @@ public class TilesScript : MonoBehaviour {
 		}
 	} // end of OpenField()
 
-
-	//
+	// generate a new position for the upper and lower border openings
 	private void NewOpening()
 	{
 		openingIndex[0] = Random.Range(1, gridWidth - 7);
@@ -219,12 +223,12 @@ public class TilesScript : MonoBehaviour {
 		openingIndex[3] = openingIndex[2] + 6;
 	}
 
-
-	//
+	// returns the grid value of the center of the lower gap
+	// used to place launch arrow
 	internal int GetLowerGapCenter() { return openingIndex[2] + 3; }
 
-
-	//
+	// changes the current obstacle sprite with one of a lower durability
+	// if the current sprite is at it's lowest value, it is replaces with the open water sprite
 	internal void BreakSprite(GameObject tile)
 	{
 		// for each of the possible in-field sprites ...
@@ -259,18 +263,23 @@ public class TilesScript : MonoBehaviour {
 	} // end of BreakSprite()
 
 
-	//
+	// replaces all objects in the tile tracking array with the tile objects currently in hierarchy
 	private void GetAllTiles()
 	{
+		// find all gameObjects in hierarchy
 		Object[] array = Resources.FindObjectsOfTypeAll(typeof(GameObject));
+		// empty tile tracking array
 		tiles.Clear();
 
+		// for each gameObject found in Hierarchy ...
 		for (int i = 0; i < array.Length; i += 1)
 		{ 
+			// ... if it is a tile object, 
 			if (array[i].name.Contains("Tile["))
 			{
+				// ... add it to the tracking array
 				tiles.Add((GameObject)array[i]);
 			}
 		}
-	}
+	} // end of GetAllTiles()
 }

@@ -3,8 +3,8 @@
 public class MovementScript : MonoBehaviour {
 
 	// references
-	public GameObject sm;
-	public float speed;
+	public GameObject sm; // SceneManager
+	public float speed; // ship movement speed
 
 	private bool isFinished; // determines if freighter crossed finish line
 
@@ -12,6 +12,7 @@ public class MovementScript : MonoBehaviour {
 	//
 	private void Start()
 	{
+		// set level finished value to false
 		isFinished = false;
 	}
 
@@ -19,7 +20,6 @@ public class MovementScript : MonoBehaviour {
 	//
 	private void Update()
 	{
-		
 		// if boat is active ...
 		if (gameObject.activeInHierarchy)
 		{
@@ -48,13 +48,12 @@ public class MovementScript : MonoBehaviour {
 		}
 	} // end of Update()
 
-
-	//
+	// getter for level finished value
 	public bool IsFinished() { return isFinished; }
+	// setter for level finished value
 	public void SetFinished(bool fin) { isFinished = fin; }
 
-
-	//
+	// called when objects collider with the object to which this script is attached
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		// if freighter collides with something ...

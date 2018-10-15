@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-E:/Users/Charles/Documents/My Games/Unity-Workspace/ASotI_IceBreaker/Builds/Andriod/IceBreaker.apk
+E:/Users/Charles/Documents/My Games/Unity-Workspace/ASotI/ASotI_IceBreaker/Builds/Andriod/Icebreaker.apk
 SceneListBegin?
 Assets/Scenes/MainMenuScene.unity
 Assets/Scenes/TutorialScene.unity

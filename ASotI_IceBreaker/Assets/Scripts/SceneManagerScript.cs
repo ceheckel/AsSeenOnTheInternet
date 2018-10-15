@@ -3,20 +3,20 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagerScript : MonoBehaviour {
 
-	public static SceneManagerScript instance;
-
+	// references
+	public static SceneManagerScript instance; // SceneManager singleton
 
 	// used to initialize any variables or game state before the game starts
 	// called only once during the lifetime of the script instance
 	// called after all objects are initialized and before any Start functions
 	private void Awake()
 	{
+		// setup singleton
 		if (instance == null) { instance = this; }
 		else if (instance != this) { Destroy(gameObject); }
 
 		DontDestroyOnLoad(gameObject);
 	}
-
 
 	//
 	private void Update()
@@ -53,7 +53,11 @@ public class SceneManagerScript : MonoBehaviour {
 	}
 
 
-	//
+	// set up the in-game level
+	// if reset is true, 
+	//		stats are reset to default values
+	//		boats are recreated
+	//		tiles are recreated
 	internal void NewLevel(bool reset)
 	{
 		gameObject.GetComponent<StatsScript>().FindStats(); // make reference connections
@@ -110,6 +114,6 @@ public class SceneManagerScript : MonoBehaviour {
 	} // end of OnLevelWasLoaded()
 
 
-	//
+	// closes application
 	public void ExitGame() { Application.Quit(); }
 }

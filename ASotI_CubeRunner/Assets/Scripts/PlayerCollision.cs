@@ -14,8 +14,6 @@ public class PlayerCollision : MonoBehaviour {
         // with the same logic
         if (collisionInfo.collider.tag == "Obstacle")
         {
-            Debug.Log("We hit an Obstacle!");
-
             // turn off movement when an obstacle is hit
             movement.enabled = false;
             FindObjectOfType<GameManager>().EndGame(); // returns an error if zero GameManager Objects exist

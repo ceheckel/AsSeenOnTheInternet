@@ -1,6 +1,23 @@
 ﻿using UnityEngine;
-using UnityEngine.Audio;
 
+/**
+ * Custom class used to create a Sound object
+ * Sound objects contain:
+ *	sound clip ("clip") 
+ *		Type: AudioClip
+ *	volume range ("volume") 
+ *		Type: float 
+ *		Range: 0 - 1, 
+ *	pitch range ("pitch")
+ *		Type: float
+ *		Range: 0.1 - 3.0
+ *	loop controller ("loop")
+ *		Type: boolean
+ *		Default: false
+ *	origin point ("source")
+ *		Type: AudioSource
+ *		Hidden in Inspector
+ */
 [System.Serializable]
 public class Sound
 {

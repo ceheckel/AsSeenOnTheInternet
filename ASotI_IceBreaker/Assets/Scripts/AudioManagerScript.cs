@@ -1,14 +1,13 @@
-﻿using UnityEngine.Audio;
-using System;
+﻿using System;
 using UnityEngine;
 
 public class AudioManagerScript : MonoBehaviour {
 
-	public static AudioManagerScript instance;
+	// references
+	public static AudioManagerScript instance; // AudioManager Singleton
 
-	public Sound[] sounds;
+	public Sound[] sounds; // list of all sounds
 	
-
 	//
 	void Awake () {
 		
@@ -29,15 +28,13 @@ public class AudioManagerScript : MonoBehaviour {
 			s.source.loop = s.loop;
 		}
 	}
-
-
+	
 	//
 	private void Start()
 	{
 		Play("Theme");
 	}
-
-
+	
 	//
 	public void Play(string name)
 	{
@@ -46,8 +43,7 @@ public class AudioManagerScript : MonoBehaviour {
 		if (s == null) { Debug.LogWarning("Sound \"" + name + "\" was not found"); }
 		s.source.Play();
 	}
-
-
+	
 	//
 	public void PlayRandom()
 	{

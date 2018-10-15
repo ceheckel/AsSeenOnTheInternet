@@ -31,8 +31,6 @@ object needs to be hit is determined by the density of the sprite, and levels
 are be randomly generated.
 
 ### Spindle (ASotI 03)
-**Development in Progress**
-
 Spindle is my take on an unidentified game found in an on-line advertisement.
 The game features a 3-dimensional spindle shape of infinite length with 
 flywheel-esk objects attached to it.  Each wheel has a notch, or gap, in it 
@@ -51,7 +49,7 @@ to hit a baseball as far 'outta the park' as possible with the player's score
 incrementing with distance.  
 
 ### Protect the Balloon (ASotI 05)
-**Not yet in development**
+**Development in Progress**
 
 Protect the balloon is a 2d single player mobile game in which the goal is to 
 prevent procedurally spawned objects from falling onto your balloon.  The 

@@ -23,8 +23,8 @@ public class CreateSplatterScript : MonoBehaviour {
 					collision.gameObject.transform.parent
 				);
 
-			// ... play audio clip
-
+			// ... play ball bouncing noise
+			GameObject.Find("AudioManager").GetComponent<AudioManagerScript>().PlayRandom();
 		}
 	}
 }

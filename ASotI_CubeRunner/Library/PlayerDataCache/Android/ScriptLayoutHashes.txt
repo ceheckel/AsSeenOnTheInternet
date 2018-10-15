@@ -1,6 +1,6 @@
 Android
 PlayerPath?
-E:/Users/Charles/Documents/My Games/Unity-Workspace/ASotI_CubeRunner/Builds/Android/CubeRunner.apk
+E:/Users/Charles/Documents/My Games/Unity-Workspace/ASotI/ASotI_CubeRunner/Builds/Android/CubeRunner_1_1.apk
 SceneListBegin?
 Assets/Scenes/Menu.unity
 Assets/Scenes/Level01.unity
