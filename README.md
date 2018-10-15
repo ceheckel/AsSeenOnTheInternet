@@ -26,7 +26,7 @@ discussed in Brackeys' tutorial series has been implemented into this first
 game.
 
 ### Ice Breaker (ASotI 02)
-**see https://github.com/ceheckel/AsSeenOnTheInternet/tree/master/ASotI_IceBreaker/Buildss to download a version that is right for you**
+**see https://github.com/ceheckel/AsSeenOnTheInternet/tree/master/ASotI_IceBreaker/Builds to download a version that is right for you**
 
 Ice Breaker is a 2-dimensional [Bubble Shooter](http://www.bubblegame.org/) style game in which the 
 objective is to clear the playing field by hitting the ice blocks with your 
