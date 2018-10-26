@@ -10,6 +10,8 @@ Gameroom applications, WebGL links and files, and/or Console builds (Xbox,
 Playstation, etc).
 
 ### Cube Runner (ASotI 01)
+**see https://github.com/ceheckel/AsSeenOnTheInternet/tree/master/ASotI_CubeRunner/Builds to download a version that is right for you**
+
 A Cube Runner variant created using tutorials from youtube.com/Brackeys as an 
 introduction to the Unity engine and IDE.
 
@@ -24,6 +26,8 @@ discussed in Brackeys' tutorial series has been implemented into this first
 game.
 
 ### Ice Breaker (ASotI 02)
+**see https://github.com/ceheckel/AsSeenOnTheInternet/tree/master/ASotI_IceBreaker/Builds to download a version that is right for you**
+
 Ice Breaker is a 2-dimensional [Bubble Shooter](http://www.bubblegame.org/) style game in which the 
 objective is to clear the playing field by hitting the ice blocks with your 
 launched ice breaking boats a set number of times, the number of times each 
@@ -31,6 +35,8 @@ object needs to be hit is determined by the density of the sprite, and levels
 are be randomly generated.
 
 ### Spindle (ASotI 03)
+**see https://github.com/ceheckel/AsSeenOnTheInternet/tree/master/ASotI_Spindle/Builds to download a version that is right for you**
+
 Spindle is my take on an unidentified game found in an on-line advertisement.
 The game features a 3-dimensional spindle shape of infinite length with 
 flywheel-esk objects attached to it.  Each wheel has a notch, or gap, in it 
