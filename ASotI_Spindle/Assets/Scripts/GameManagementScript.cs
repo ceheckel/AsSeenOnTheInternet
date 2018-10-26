@@ -30,6 +30,7 @@ public class GameManagementScript : MonoBehaviour {
 		SetGameOn(true);
 		SetScore(0);
 		SetTime(0);
+		ChangeCanvasOrientation();
 
 		play = GameObject.Find("Player");
 		if (play == null) { Debug.LogWarning("GameManagementScript: Player not found"); }
@@ -97,6 +98,39 @@ public class GameManagementScript : MonoBehaviour {
 	internal void ExitGame()
 	{
 		Application.Quit();
+	}
+
+	// changes the spacing of the stat tracker and end-game text based on 
+	// from which device the game is being run
+	internal void ChangeCanvasOrientation()
+	{
+		GameObject t1 = GameObject.Find("Better Luck");
+		GameObject t2 = GameObject.Find("Play Again");
+		GameObject t3 = GameObject.Find("Stats");
+		if (t1 == null || t2 == null || t3 == null) { return; }
+
+		//Check if we are running either in the Unity editor or in a standalone build.
+#if UNITY_STANDALONE || UNITY_WEBPLAYER || UNITY_EDITOR
+		Vector3 p1 = new Vector3(533.5f, 754.5f, 0);
+		Vector3 p2 = new Vector3(533.5f, 154.5f, 0);
+		Vector3 p3 = new Vector3(133.5f, 604.5f, 0);
+		
+		t1.GetComponent<RectTransform>().SetPositionAndRotation(p1, t1.GetComponent<RectTransform>().rotation);
+		t2.GetComponent<RectTransform>().SetPositionAndRotation(p2, t2.GetComponent<RectTransform>().rotation);
+		t3.GetComponent<RectTransform>().SetPositionAndRotation(p3, t3.GetComponent<RectTransform>().rotation);
+
+		//Check if we are running on iOS, Android, Windows Phone 8 or Unity iPhone
+#elif UNITY_IOS || UNITY_ANDROID || UNITY_WP8 || UNITY_IPHONE
+		float sh = Screen.height;
+		float sw = Screen.width;
+		Vector3 p1 = new Vector3(sw/2, sh-200, 0);
+		Vector3 p2 = new Vector3(sw/2, 200, 0);
+		Vector3 p3 = new Vector3(100, sh/2, 0);
+
+		t1.GetComponent<RectTransform>().SetPositionAndRotation(p1, t1.GetComponent<RectTransform>().rotation);
+		t2.GetComponent<RectTransform>().SetPositionAndRotation(p2, t2.GetComponent<RectTransform>().rotation);
+		t3.GetComponent<RectTransform>().SetPositionAndRotation(p3, t3.GetComponent<RectTransform>().rotation);
+#endif //End of mobile platform dependendent compilation section started above with #elif
 	}
 
 	// setter for gameOn variable
